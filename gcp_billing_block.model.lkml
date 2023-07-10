@@ -1,4 +1,4 @@
-connection: "billing1"
+connection: "billing"
 label: "Google Cloud Billing"
 
 include: "/views/*.view.lkml"
