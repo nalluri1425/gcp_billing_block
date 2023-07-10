@@ -6,7 +6,7 @@ view: gcp_billing_export_v1_0100A3_749310_A12E96 {
     datagroup_trigger: billing_datagroup
     increment_key: "export_date"
     increment_offset: 0
-    sql: select *, generate_uuid() as pk from 'billing.gcp_billing_export_v1_0100A3_749310_A12E96'
+    sql: select *, generate_uuid() as pk from `billing.gcp_billing_export_v1_0100A3_749310_A12E96`
     WHERE {% incrementcondition %} export_time {% endincrementcondition %};;
   }
 
