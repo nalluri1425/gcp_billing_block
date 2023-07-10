@@ -1,7 +1,7 @@
-include: "gcp_billing_export.view.lkml"
+include: "gcp_billing_export_v1_0100A3_749310_A12E96.view.lkml"
 include: "recommendations_export.view.lkml"
 
-view: +gcp_billing_export {
+view: +gcp_billing_export_v1_0100A3_749310_A12E96 {
   dimension: currency_symbol {
     hidden: yes
     sql:  CASE

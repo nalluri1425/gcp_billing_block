@@ -1,4 +1,4 @@
-view: gcp_billing_export {
+view: gcp_billing_export_v1_0100A3_749310_A12E96 {
   view_label: "Billing"
   derived_table: {
     partition_keys: ["usage_start_time"]
@@ -6,7 +6,7 @@ view: gcp_billing_export {
     datagroup_trigger: billing_datagroup
     increment_key: "export_date"
     increment_offset: 0
-    sql: select *, generate_uuid() as pk from @{BILLING_TABLE}
+    sql: select *, generate_uuid() as pk from 'billing.gcp_billing_export_v1_0100A3_749310_A12E96'
     WHERE {% incrementcondition %} export_time {% endincrementcondition %};;
   }
 
@@ -217,15 +217,15 @@ view: gcp_billing_export {
     group_item_label: "Description"
     link: {
       label: "{% if value contains 'BigQuery' %} BigQuery Deep Dive {% endif %}"
-      url: "/dashboards-next/gcp_billing_block::bigquery_insights?Project%20ID={{ _filters['gcp_billing_export.project__id'] | url_encode }}"
+      url: "/dashboards-next/gcp_billing_block::bigquery_insights?Project%20ID={{ _filters['gcp_billing_export_v1_0100A3_749310_A12E96.project__id'] | url_encode }}"
     }
     link: {
       label: "{% if value contains 'Compute Engine' %} Compute Engine Deep Dive {% endif %}"
-      url: "/dashboards-next/gcp_billing_block::compute_engine_insights?Project%20ID={{ _filters['gcp_billing_export.project__id'] | url_encode }}"
+      url: "/dashboards-next/gcp_billing_block::compute_engine_insights?Project%20ID={{ _filters['gcp_billing_export_v1_0100A3_749310_A12E96.project__id'] | url_encode }}"
     }
     link: {
       label: "{% if value contains 'Cloud Storage' %} Cloud Storage Deep Dive {% endif %}"
-      url: "/dashboards-next/gcp_billing_block::cloud_storage_insights?Project%20ID={{ _filters['gcp_billing_export.project__id'] | url_encode }}"
+      url: "/dashboards-next/gcp_billing_block::cloud_storage_insights?Project%20ID={{ _filters['gcp_billing_export_v1_0100A3_749310_A12E96.project__id'] | url_encode }}"
     }
   }
 
@@ -365,16 +365,16 @@ view: gcp_billing_export {
 
   measure: total_net_cost {
     type: number
-    sql: ${total_cost} - ${gcp_billing_export__credits.total_amount};;
+    sql: ${total_cost} - ${gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_amount};;
     value_format: "#,##0.00"
     html: <a href="#drillmenu" target="_self">{{ currency_symbol._value }}{{ rendered_value }}</a>;;
-    drill_fields: [project__name,service__description,total_cost, gcp_billing_export__credits.total_amount]
+    drill_fields: [project__name,service__description,total_cost, gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_amount]
   }
 
 
 }
 
-view: gcp_billing_export__labels {
+view: gcp_billing_export_v1_0100A3_749310_A12E96__labels {
   view_label: "Labels"
 
   dimension: key {
@@ -390,14 +390,14 @@ view: gcp_billing_export__labels {
   }
 }
 
-view: gcp_billing_export__credits {
+view: gcp_billing_export_v1_0100A3_749310_A12E96__credits {
   view_label: "Credits"
   drill_fields: [id]
 
   dimension: pk {
     primary_key: yes
     hidden: yes
-    sql: concat(${name},${gcp_billing_export.pk},${amount}) ;;
+    sql: concat(${name},${gcp_billing_export_v1_0100A3_749310_A12E96.pk},${amount}) ;;
   }
 
   dimension: id {
@@ -432,43 +432,43 @@ view: gcp_billing_export__credits {
     label: "Total Credit Amount"
     type: sum
     value_format: "#,##0.00"
-    html: <a href="#drillmenu" target="_self">{{ gcp_billing_export.currency_symbol._value }}{{ rendered_value }}</a>;;
+    html: <a href="#drillmenu" target="_self">{{ gcp_billing_export_v1_0100A3_749310_A12E96.currency_symbol._value }}{{ rendered_value }}</a>;;
     sql: -1*${amount} ;;
-    drill_fields: [gcp_billing_export__credits.type,gcp_billing_export__credits.total_amount]
+    drill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96__credits.type,gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_amount]
   }
 
   measure: total_sustained_use_discount {
     view_label: "Credits"
     type: sum
     value_format: "#,##0.00"
-    html: <a href="#drillmenu" target="_self">{{ gcp_billing_export.currency_symbol._value }}{{ rendered_value }}</a>;;
+    html: <a href="#drillmenu" target="_self">{{ gcp_billing_export_v1_0100A3_749310_A12E96.currency_symbol._value }}{{ rendered_value }}</a>;;
     sql: -1*${amount} ;;
-    filters: [gcp_billing_export__credits.type: "SUSTAINED_USAGE_DISCOUNT"]
-    drill_fields: [gcp_billing_export__credits.id,gcp_billing_export__credits.name,total_amount]
+    filters: [gcp_billing_export_v1_0100A3_749310_A12E96__credits.type: "SUSTAINED_USAGE_DISCOUNT"]
+    drill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96__credits.id,gcp_billing_export_v1_0100A3_749310_A12E96__credits.name,total_amount]
   }
 
   measure: total_committed_use_discount {
     view_label: "Credits"
     type: sum
     value_format: "#,##0.00"
-    html: <a href="#drillmenu" target="_self">{{ gcp_billing_export.currency_symbol._value }}{{ rendered_value }}</a>;;
+    html: <a href="#drillmenu" target="_self">{{ gcp_billing_export_v1_0100A3_749310_A12E96.currency_symbol._value }}{{ rendered_value }}</a>;;
     sql: -1*${amount} ;;
-    filters: [gcp_billing_export__credits.type: "COMMITTED_USAGE_DISCOUNT, COMMITTED_USAGE_DISCOUNT_DOLLAR_BASE"]
-    drill_fields: [gcp_billing_export__credits.id,gcp_billing_export__credits.name,total_amount]
+    filters: [gcp_billing_export_v1_0100A3_749310_A12E96__credits.type: "COMMITTED_USAGE_DISCOUNT, COMMITTED_USAGE_DISCOUNT_DOLLAR_BASE"]
+    drill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96__credits.id,gcp_billing_export_v1_0100A3_749310_A12E96__credits.name,total_amount]
   }
 
   measure: total_promotional_credit {
     view_label: "Credits"
     type: sum
     value_format: "#,##0.00"
-    html: <a href="#drillmenu" target="_self">{{ gcp_billing_export.currency_symbol._value }}{{ rendered_value }}</a>;;
+    html: <a href="#drillmenu" target="_self">{{ gcp_billing_export_v1_0100A3_749310_A12E96.currency_symbol._value }}{{ rendered_value }}</a>;;
     sql: -1*${amount} ;;
-    filters: [gcp_billing_export__credits.type: "PROMOTION"]
-    drill_fields: [gcp_billing_export__credits.id,gcp_billing_export__credits.name,total_amount]
+    filters: [gcp_billing_export_v1_0100A3_749310_A12E96__credits.type: "PROMOTION"]
+    drill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96__credits.id,gcp_billing_export_v1_0100A3_749310_A12E96__credits.name,total_amount]
   }
 }
 
-view: gcp_billing_export__system_labels {
+view: gcp_billing_export_v1_0100A3_749310_A12E96__system_labels {
   view_label: "Labels"
   dimension: key {
     group_label: "System"
@@ -483,7 +483,7 @@ view: gcp_billing_export__system_labels {
   }
 }
 
-view: gcp_billing_export__project__labels {
+view: gcp_billing_export_v1_0100A3_749310_A12E96__project__labels {
   view_label: "Labels"
   dimension: key {
     group_label: "Project"

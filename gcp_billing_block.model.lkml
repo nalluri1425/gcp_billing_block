@@ -1,44 +1,44 @@
-connection: "@{CONNECTION}"
+connection: "billing1"
 label: "Google Cloud Billing"
 
 include: "/views/*.view.lkml"
 include: "/dashboards/*"
 
 datagroup:billing_datagroup {
-  sql_trigger: select max(export_time) from`anilgcp-co-dev.billing.gcp_billing_export_public`;;
+  sql_trigger: select max(export_time) from`64020156808.billing.gcp_billing_export_v1_0100A3_749310_A12E96_public`;;
   description: "Triggers a rebuild when new data is exported"
 }
 
 datagroup:pricing_datagroup {
-  sql_trigger: select max(export_time) from `anilgcp-co-dev.billing.cloud_pricing_export`;;
+  sql_trigger: select max(export_time) from `64020156808.billing.cloud_pricing_export`;;
   description: "Triggers a rebuild when new data is exported"
 }
 
-explore: gcp_billing_export {
+explore: gcp_billing_export_v1_0100A3_749310_A12E96 {
   label: "Billing"
-  join: gcp_billing_export__labels {
-    sql:LEFT JOIN UNNEST(${gcp_billing_export.labels}) as gcp_billing_export__labels ;;
+  join: gcp_billing_export_v1_0100A3_749310_A12E96__labels {
+    sql:LEFT JOIN UNNEST(${gcp_billing_export_v1_0100A3_749310_A12E96.labels}) as gcp_billing_export_v1_0100A3_749310_A12E96__labels ;;
     relationship: one_to_many
   }
 
-  join: gcp_billing_export__system_labels {
-    sql:LEFT JOIN UNNEST(${gcp_billing_export.system_labels}) as gcp_billing_export__system_labels ;;
+  join: gcp_billing_export_v1_0100A3_749310_A12E96__system_labels {
+    sql:LEFT JOIN UNNEST(${gcp_billing_export_v1_0100A3_749310_A12E96.system_labels}) as gcp_billing_export_v1_0100A3_749310_A12E96__system_labels ;;
     relationship: one_to_many
   }
 
-  join: gcp_billing_export__project__labels {
-    sql:LEFT JOIN UNNEST(${gcp_billing_export.project__labels}) as gcp_billing_export__project__labels ;;
+  join: gcp_billing_export_v1_0100A3_749310_A12E96__project__labels {
+    sql:LEFT JOIN UNNEST(${gcp_billing_export_v1_0100A3_749310_A12E96.project__labels}) as gcp_billing_export_v1_0100A3_749310_A12E96__project__labels ;;
     relationship: one_to_many
   }
 
-  join: gcp_billing_export__credits {
-    sql:LEFT JOIN UNNEST(${gcp_billing_export.credits}) as gcp_billing_export__credits ;;
+  join: gcp_billing_export_v1_0100A3_749310_A12E96__credits {
+    sql:LEFT JOIN UNNEST(${gcp_billing_export_v1_0100A3_749310_A12E96.credits}) as gcp_billing_export_v1_0100A3_749310_A12E96__credits ;;
     relationship: one_to_many
   }
 
   join: pricing {
     relationship: one_to_one
-    sql_on: ${pricing.sku__id} = ${gcp_billing_export.sku__id} ;;
+    sql_on: ${pricing.sku__id} = ${gcp_billing_export_v1_0100A3_749310_A12E96.sku__id} ;;
   }
 }
 
@@ -88,8 +88,8 @@ explore: recommendations_export {
   label: "Recommendations"
   sql_always_where:
   -- Show only the latest recommendations. Use a grace period of 3 days to avoid data export gaps.
-    _PARTITIONDATE = DATE_SUB(CURRENT_DATE(), INTERVAL 3 DAY)
-    AND ${cloud_entity_type} = 'PROJECT_NUMBER'
+    --_PARTITIONDATE = DATE_SUB(CURRENT_DATE(), INTERVAL 3 DAY)
+    ${cloud_entity_type} = 'PROJECT_NUMBER'
     AND ${state} = 'ACTIVE'
     AND ${recommender} IN ('google.compute.commitment.UsageCommitmentRecommender',
       'google.compute.disk.IdleResourceRecommender',

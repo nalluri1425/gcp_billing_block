@@ -104,15 +104,15 @@
   - title: Data Storage Units
     name: Data Storage Units
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: looker_line
-    fields: [pricing.pricing_type, gcp_billing_export.usage_start_month, gcp_billing_export.total_cost]
+    fields: [pricing.pricing_type, gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month, gcp_billing_export_v1_0100A3_749310_A12E96.total_cost]
     pivots: [pricing.pricing_type]
-    fill_fields: [gcp_billing_export.usage_start_month]
+    fill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month]
     filters:
-      gcp_billing_export.service__description: Cloud Storage
+      gcp_billing_export_v1_0100A3_749310_A12E96.service__description: Cloud Storage
       pricing.pricing_category: Data Storage
-    sorts: [pricing.pricing_type, gcp_billing_export.usage_start_month desc]
+    sorts: [pricing.pricing_type, gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month desc]
     limit: 500
     column_limit: 50
     total: true
@@ -162,7 +162,7 @@
     conditional_formatting_include_nulls: false
     title_hidden: true
     listen:
-      Project ID: gcp_billing_export.project__id
+      Project ID: gcp_billing_export_v1_0100A3_749310_A12E96.project__id
     row: 6
     col: 0
     width: 12
@@ -170,15 +170,15 @@
   - title: Data Retrieval Units
     name: Data Retrieval Units
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: looker_line
-    fields: [pricing.pricing_type, gcp_billing_export.usage_start_month, gcp_billing_export.total_cost]
+    fields: [pricing.pricing_type, gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month, gcp_billing_export_v1_0100A3_749310_A12E96.total_cost]
     pivots: [pricing.pricing_type]
-    fill_fields: [gcp_billing_export.usage_start_month]
+    fill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month]
     filters:
-      gcp_billing_export.service__description: Cloud Storage
+      gcp_billing_export_v1_0100A3_749310_A12E96.service__description: Cloud Storage
       pricing.pricing_category: Data Retrieval
-    sorts: [pricing.pricing_type, gcp_billing_export.usage_start_month desc]
+    sorts: [pricing.pricing_type, gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month desc]
     limit: 500
     column_limit: 50
     total: true
@@ -228,7 +228,7 @@
     conditional_formatting_include_nulls: false
     title_hidden: true
     listen:
-      Project ID: gcp_billing_export.project__id
+      Project ID: gcp_billing_export_v1_0100A3_749310_A12E96.project__id
     row: 16
     col: 0
     width: 12
@@ -236,15 +236,15 @@
   - title: Early Deletes Units
     name: Early Deletes Units
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: looker_line
-    fields: [pricing.pricing_type, gcp_billing_export.usage_start_month, gcp_billing_export.usage__amount_in_calculated_units]
+    fields: [pricing.pricing_type, gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month, gcp_billing_export_v1_0100A3_749310_A12E96.usage__amount_in_calculated_units]
     pivots: [pricing.pricing_type]
-    fill_fields: [gcp_billing_export.usage_start_month]
+    fill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month]
     filters:
-      gcp_billing_export.service__description: Cloud Storage
+      gcp_billing_export_v1_0100A3_749310_A12E96.service__description: Cloud Storage
       pricing.pricing_category: Early Deletes
-    sorts: [pricing.pricing_type, gcp_billing_export.usage_start_month desc]
+    sorts: [pricing.pricing_type, gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month desc]
     limit: 500
     column_limit: 50
     total: true
@@ -294,7 +294,7 @@
     conditional_formatting_include_nulls: false
     title_hidden: true
     listen:
-      Project ID: gcp_billing_export.project__id
+      Project ID: gcp_billing_export_v1_0100A3_749310_A12E96.project__id
     row: 26
     col: 0
     width: 12
@@ -302,15 +302,15 @@
   - title: Operations Units
     name: Operations Units
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: looker_line
-    fields: [pricing.pricing_type, gcp_billing_export.usage_start_month, gcp_billing_export.usage__amount_in_calculated_units]
+    fields: [pricing.pricing_type, gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month, gcp_billing_export_v1_0100A3_749310_A12E96.usage__amount_in_calculated_units]
     pivots: [pricing.pricing_type]
-    fill_fields: [gcp_billing_export.usage_start_month]
+    fill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month]
     filters:
-      gcp_billing_export.service__description: Cloud Storage
+      gcp_billing_export_v1_0100A3_749310_A12E96.service__description: Cloud Storage
       pricing.pricing_category: Operations
-    sorts: [pricing.pricing_type, gcp_billing_export.usage_start_month desc]
+    sorts: [pricing.pricing_type, gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month desc]
     limit: 500
     column_limit: 50
     total: true
@@ -360,7 +360,7 @@
     conditional_formatting_include_nulls: false
     title_hidden: true
     listen:
-      Project ID: gcp_billing_export.project__id
+      Project ID: gcp_billing_export_v1_0100A3_749310_A12E96.project__id
     row: 36
     col: 0
     width: 12
@@ -368,15 +368,15 @@
   - title: Network Units
     name: Network Units
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: looker_line
-    fields: [pricing.pricing_type, gcp_billing_export.usage_start_month, gcp_billing_export.usage__amount_in_calculated_units]
+    fields: [pricing.pricing_type, gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month, gcp_billing_export_v1_0100A3_749310_A12E96.usage__amount_in_calculated_units]
     pivots: [pricing.pricing_type]
-    fill_fields: [gcp_billing_export.usage_start_month]
+    fill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month]
     filters:
-      gcp_billing_export.service__description: Cloud Storage
+      gcp_billing_export_v1_0100A3_749310_A12E96.service__description: Cloud Storage
       pricing.pricing_category: Network
-    sorts: [pricing.pricing_type, gcp_billing_export.usage_start_month desc]
+    sorts: [pricing.pricing_type, gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month desc]
     limit: 500
     column_limit: 50
     total: true
@@ -426,7 +426,7 @@
     conditional_formatting_include_nulls: false
     title_hidden: true
     listen:
-      Project ID: gcp_billing_export.project__id
+      Project ID: gcp_billing_export_v1_0100A3_749310_A12E96.project__id
     row: 46
     col: 0
     width: 12
@@ -434,15 +434,15 @@
   - title: Data Retrieval Cost
     name: Data Retrieval Cost
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: looker_column
-    fields: [pricing.pricing_type, gcp_billing_export.usage_start_month, gcp_billing_export.total_cost]
+    fields: [pricing.pricing_type, gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month, gcp_billing_export_v1_0100A3_749310_A12E96.total_cost]
     pivots: [pricing.pricing_type]
-    fill_fields: [gcp_billing_export.usage_start_month]
+    fill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month]
     filters:
-      gcp_billing_export.service__description: Cloud Storage
+      gcp_billing_export_v1_0100A3_749310_A12E96.service__description: Cloud Storage
       pricing.pricing_category: Data Retrieval
-    sorts: [pricing.pricing_type, gcp_billing_export.usage_start_month desc]
+    sorts: [pricing.pricing_type, gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month desc]
     limit: 500
     column_limit: 50
     total: true
@@ -492,7 +492,7 @@
     conditional_formatting_include_nulls: false
     title_hidden: true
     listen:
-      Project ID: gcp_billing_export.project__id
+      Project ID: gcp_billing_export_v1_0100A3_749310_A12E96.project__id
     row: 16
     col: 12
     width: 12
@@ -500,15 +500,15 @@
   - title: Data Storage Cost
     name: Data Storage Cost
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: looker_column
-    fields: [pricing.pricing_type, gcp_billing_export.usage_start_month, gcp_billing_export.total_cost]
+    fields: [pricing.pricing_type, gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month, gcp_billing_export_v1_0100A3_749310_A12E96.total_cost]
     pivots: [pricing.pricing_type]
-    fill_fields: [gcp_billing_export.usage_start_month]
+    fill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month]
     filters:
-      gcp_billing_export.service__description: Cloud Storage
+      gcp_billing_export_v1_0100A3_749310_A12E96.service__description: Cloud Storage
       pricing.pricing_category: Data Storage
-    sorts: [pricing.pricing_type, gcp_billing_export.usage_start_month desc]
+    sorts: [pricing.pricing_type, gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month desc]
     limit: 500
     column_limit: 50
     total: true
@@ -558,7 +558,7 @@
     conditional_formatting_include_nulls: false
     title_hidden: true
     listen:
-      Project ID: gcp_billing_export.project__id
+      Project ID: gcp_billing_export_v1_0100A3_749310_A12E96.project__id
     row: 6
     col: 12
     width: 12
@@ -566,15 +566,15 @@
   - title: Early Deletes Cost
     name: Early Deletes Cost
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: looker_column
-    fields: [pricing.pricing_type, gcp_billing_export.usage_start_month, gcp_billing_export.total_cost]
+    fields: [pricing.pricing_type, gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month, gcp_billing_export_v1_0100A3_749310_A12E96.total_cost]
     pivots: [pricing.pricing_type]
-    fill_fields: [gcp_billing_export.usage_start_month]
+    fill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month]
     filters:
-      gcp_billing_export.service__description: Cloud Storage
+      gcp_billing_export_v1_0100A3_749310_A12E96.service__description: Cloud Storage
       pricing.pricing_category: Early Deletes
-    sorts: [pricing.pricing_type, gcp_billing_export.usage_start_month desc]
+    sorts: [pricing.pricing_type, gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month desc]
     limit: 500
     column_limit: 50
     total: true
@@ -624,7 +624,7 @@
     conditional_formatting_include_nulls: false
     title_hidden: true
     listen:
-      Project ID: gcp_billing_export.project__id
+      Project ID: gcp_billing_export_v1_0100A3_749310_A12E96.project__id
     row: 26
     col: 12
     width: 12
@@ -632,15 +632,15 @@
   - title: Network Cost
     name: Network Cost
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: looker_column
-    fields: [pricing.pricing_type, gcp_billing_export.usage_start_month, gcp_billing_export.usage__amount_in_calculated_units]
+    fields: [pricing.pricing_type, gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month, gcp_billing_export_v1_0100A3_749310_A12E96.usage__amount_in_calculated_units]
     pivots: [pricing.pricing_type]
-    fill_fields: [gcp_billing_export.usage_start_month]
+    fill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month]
     filters:
-      gcp_billing_export.service__description: Cloud Storage
+      gcp_billing_export_v1_0100A3_749310_A12E96.service__description: Cloud Storage
       pricing.pricing_category: Network
-    sorts: [pricing.pricing_type, gcp_billing_export.usage_start_month desc]
+    sorts: [pricing.pricing_type, gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month desc]
     limit: 500
     column_limit: 50
     total: true
@@ -690,7 +690,7 @@
     conditional_formatting_include_nulls: false
     title_hidden: true
     listen:
-      Project ID: gcp_billing_export.project__id
+      Project ID: gcp_billing_export_v1_0100A3_749310_A12E96.project__id
     row: 46
     col: 12
     width: 12
@@ -698,15 +698,15 @@
   - title: Operations Cost
     name: Operations Cost
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: looker_column
-    fields: [pricing.pricing_type, gcp_billing_export.usage_start_month, gcp_billing_export.usage__amount_in_calculated_units]
+    fields: [pricing.pricing_type, gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month, gcp_billing_export_v1_0100A3_749310_A12E96.usage__amount_in_calculated_units]
     pivots: [pricing.pricing_type]
-    fill_fields: [gcp_billing_export.usage_start_month]
+    fill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month]
     filters:
-      gcp_billing_export.service__description: Cloud Storage
+      gcp_billing_export_v1_0100A3_749310_A12E96.service__description: Cloud Storage
       pricing.pricing_category: Operations
-    sorts: [pricing.pricing_type, gcp_billing_export.usage_start_month desc]
+    sorts: [pricing.pricing_type, gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month desc]
     limit: 500
     column_limit: 50
     total: true
@@ -756,7 +756,7 @@
     conditional_formatting_include_nulls: false
     title_hidden: true
     listen:
-      Project ID: gcp_billing_export.project__id
+      Project ID: gcp_billing_export_v1_0100A3_749310_A12E96.project__id
     row: 36
     col: 12
     width: 12
@@ -773,6 +773,6 @@
       display: popover
       options: []
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     listens_to_filters: []
-    field: gcp_billing_export.project__id
+    field: gcp_billing_export_v1_0100A3_749310_A12E96.project__id

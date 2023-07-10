@@ -6,13 +6,13 @@
   - title: YTD Sustained Use Discount
     name: YTD Sustained Use Discount
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: single_value
-    fields: [gcp_billing_export.period_selected, gcp_billing_export__credits.total_sustained_use_discount]
+    fields: [gcp_billing_export_v1_0100A3_749310_A12E96.period_selected, gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_sustained_use_discount]
     filters:
-      gcp_billing_export.period: Year
-      gcp_billing_export.period_selected: "-NULL"
-    sorts: [gcp_billing_export__credits.total_sustained_use_discount desc]
+      gcp_billing_export_v1_0100A3_749310_A12E96.period: Year
+      gcp_billing_export_v1_0100A3_749310_A12E96.period_selected: "-NULL"
+    sorts: [gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_sustained_use_discount desc]
     limit: 500
     column_limit: 50
     custom_color_enabled: true
@@ -26,7 +26,7 @@
     conditional_formatting_include_nulls: false
     comparison_label: Last Year to Date
     defaults_version: 1
-    hidden_fields: [gcp_billing_export.period_selected]
+    hidden_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.period_selected]
     y_axes: []
     listen: {}
     row: 3
@@ -36,12 +36,12 @@
   - title: YTD Committed Use Discount
     name: YTD Committed Use Discount
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: single_value
-    fields: [gcp_billing_export.period_selected, gcp_billing_export__credits.total_committed_use_discount]
+    fields: [gcp_billing_export_v1_0100A3_749310_A12E96.period_selected, gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_committed_use_discount]
     filters:
-      gcp_billing_export.period: Year
-      gcp_billing_export.period_selected: "-NULL"
+      gcp_billing_export_v1_0100A3_749310_A12E96.period: Year
+      gcp_billing_export_v1_0100A3_749310_A12E96.period_selected: "-NULL"
     limit: 500
     column_limit: 50
     custom_color_enabled: true
@@ -55,7 +55,7 @@
     conditional_formatting_include_nulls: false
     comparison_label: Last Year to Date
     defaults_version: 1
-    hidden_fields: [gcp_billing_export.period_selected]
+    hidden_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.period_selected]
     y_axes: []
     listen: {}
     row: 3
@@ -65,12 +65,12 @@
   - title: YTD Promotion Credits
     name: YTD Promotion Credits
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: single_value
-    fields: [gcp_billing_export.period_selected, gcp_billing_export__credits.total_promotional_credit]
+    fields: [gcp_billing_export_v1_0100A3_749310_A12E96.period_selected, gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_promotional_credit]
     filters:
-      gcp_billing_export.period: Year
-      gcp_billing_export.period_selected: "-NULL"
+      gcp_billing_export_v1_0100A3_749310_A12E96.period: Year
+      gcp_billing_export_v1_0100A3_749310_A12E96.period_selected: "-NULL"
     limit: 500
     column_limit: 50
     custom_color_enabled: true
@@ -84,7 +84,7 @@
     conditional_formatting_include_nulls: false
     comparison_label: Last Year to Date
     defaults_version: 1
-    hidden_fields: [gcp_billing_export.period_selected]
+    hidden_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.period_selected]
     y_axes: []
     listen: {}
     row: 3
@@ -94,14 +94,14 @@
   - title: Cost and Credit Breakdown
     name: Cost and Credit Breakdown
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: looker_column
-    fields: [gcp_billing_export.usage_start_month, gcp_billing_export.total_cost,
-      gcp_billing_export.total_net_cost, gcp_billing_export__credits.total_amount]
-    fill_fields: [gcp_billing_export.usage_start_month]
+    fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month, gcp_billing_export_v1_0100A3_749310_A12E96.total_cost,
+      gcp_billing_export_v1_0100A3_749310_A12E96.total_net_cost, gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_amount]
+    fill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month]
     filters:
-      gcp_billing_export.usage_start_month: 12 months
-    sorts: [gcp_billing_export.usage_start_month desc]
+      gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month: 12 months
+    sorts: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month desc]
     limit: 500
     column_limit: 50
     x_axis_gridlines: false
@@ -133,11 +133,11 @@
     totals_color: "#808080"
     series_types: {}
     series_colors:
-      gcp_billing_export__credits.total_amount: "#34A853"
+      gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_amount: "#34A853"
     series_labels:
-      gcp_billing_export__credits.total_amount: Credits
-      gcp_billing_export.total_cost: Gross Cost
-      gcp_billing_export.total_net_cost: Net Cost
+      gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_amount: Credits
+      gcp_billing_export_v1_0100A3_749310_A12E96.total_cost: Gross Cost
+      gcp_billing_export_v1_0100A3_749310_A12E96.total_net_cost: Net Cost
     custom_color_enabled: true
     show_single_value_title: true
     show_comparison: false
@@ -160,13 +160,13 @@
   - title: Credit Distribution by Project
     name: Credit Distribution by Project
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: looker_grid
-    fields: [gcp_billing_export.project__name, gcp_billing_export__credits.total_amount]
+    fields: [gcp_billing_export_v1_0100A3_749310_A12E96.project__name, gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_amount]
     filters:
-      gcp_billing_export.period: Year
-      gcp_billing_export.period_selected: This Year to Date
-    sorts: [gcp_billing_export__credits.total_amount desc]
+      gcp_billing_export_v1_0100A3_749310_A12E96.period: Year
+      gcp_billing_export_v1_0100A3_749310_A12E96.period_selected: This Year to Date
+    sorts: [gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_amount desc]
     limit: 20
     column_limit: 50
     show_view_names: false
@@ -188,12 +188,12 @@
     label_type: labPer
     inner_radius: 40
     series_labels:
-      gcp_billing_export__project__labels.value: Team
+      gcp_billing_export_v1_0100A3_749310_A12E96__project__labels.value: Team
     show_sql_query_menu_options: false
     show_totals: true
     show_row_totals: true
     series_cell_visualizations:
-      gcp_billing_export__credits.total_amount:
+      gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_amount:
         is_active: true
         palette:
           palette_id: 6aced918-c4ed-89f5-d46d-c8f47e6114dd
@@ -220,15 +220,15 @@
   - title: Discount Breakdown
     name: Discount Breakdown
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: looker_column
-    fields: [gcp_billing_export.usage_start_month, gcp_billing_export__credits.type,
-      gcp_billing_export__credits.total_amount]
-    pivots: [gcp_billing_export__credits.type]
-    fill_fields: [gcp_billing_export.usage_start_month]
+    fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month, gcp_billing_export_v1_0100A3_749310_A12E96__credits.type,
+      gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_amount]
+    pivots: [gcp_billing_export_v1_0100A3_749310_A12E96__credits.type]
+    fill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month]
     filters:
-      gcp_billing_export.usage_start_month: 12 months
-    sorts: [gcp_billing_export.usage_start_month desc, gcp_billing_export__credits.type]
+      gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month: 12 months
+    sorts: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month desc, gcp_billing_export_v1_0100A3_749310_A12E96__credits.type]
     limit: 500
     column_limit: 50
     x_axis_gridlines: false
@@ -258,22 +258,22 @@
     show_totals_labels: false
     show_silhouette: false
     totals_color: "#808080"
-    y_axes: [{label: '', orientation: bottom, series: [{axisId: gcp_billing_export__credits.total_amount,
-            id: CPU Time - gcp_billing_export__credits.total_amount, name: CPU Time},
-          {axisId: gcp_billing_export__credits.total_amount, id: Memory Time - gcp_billing_export__credits.total_amount,
-            name: Memory Time}, {axisId: gcp_billing_export__credits.total_amount,
-            id: Sustained Usage Discount - gcp_billing_export__credits.total_amount,
-            name: Sustained Usage Discount}, {axisId: gcp_billing_export__credits.total_amount,
-            id: gcp_billing_export__credits.name___null - gcp_billing_export__credits.total_amount,
+    y_axes: [{label: '', orientation: bottom, series: [{axisId: gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_amount,
+            id: CPU Time - gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_amount, name: CPU Time},
+          {axisId: gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_amount, id: Memory Time - gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_amount,
+            name: Memory Time}, {axisId: gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_amount,
+            id: Sustained Usage Discount - gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_amount,
+            name: Sustained Usage Discount}, {axisId: gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_amount,
+            id: gcp_billing_export_v1_0100A3_749310_A12E96__credits.name___null - gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_amount,
             name: "∅"}], showLabels: false, showValues: true, unpinAxis: false, tickDensity: default,
         tickDensityCustom: 5, type: linear}]
     series_types: {}
     series_colors:
-      gcp_billing_export__credits.total_amount: "#34A853"
+      gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_amount: "#34A853"
     series_labels:
-      gcp_billing_export__credits.total_amount: Credits
-      gcp_billing_export.total_cost: Gross Cost
-      gcp_billing_export.total_net_cost: Net Cost
+      gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_amount: Credits
+      gcp_billing_export_v1_0100A3_749310_A12E96.total_cost: Gross Cost
+      gcp_billing_export_v1_0100A3_749310_A12E96.total_net_cost: Net Cost
     custom_color_enabled: true
     show_single_value_title: true
     show_comparison: false
@@ -286,7 +286,7 @@
     defaults_version: 1
     show_null_points: true
     interpolation: linear
-    hidden_series: [gcp_billing_export__credits.type___null - gcp_billing_export__credits.total_amount]
+    hidden_series: [gcp_billing_export_v1_0100A3_749310_A12E96__credits.type___null - gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_amount]
     hidden_fields: []
     listen: {}
     row: 14

@@ -1,6 +1,6 @@
-include: "gcp_billing_export.view.lkml"
+include: "gcp_billing_export_v1_0100A3_749310_A12E96.view.lkml"
 
-view: +gcp_billing_export {
+view: +gcp_billing_export_v1_0100A3_749310_A12E96 {
   ###################### Period over Period Reporting Metrics ######################
 
   parameter: period {
@@ -64,10 +64,10 @@ view: +gcp_billing_export {
     type: string
     sql:
         CASE
-          WHEN ${gcp_billing_export.usage_start_date} >=  ${first_date_in_period}
+          WHEN ${gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_date} >=  ${first_date_in_period}
           THEN 'This {% parameter period %} to Date'
-          WHEN ${gcp_billing_export.usage_start_date} >= ${first_date_in_prior_period}
-          AND ${gcp_billing_export.usage_start_date} <= ${last_date_in_prior_period}
+          WHEN ${gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_date} >= ${first_date_in_prior_period}
+          AND ${gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_date} <= ${last_date_in_prior_period}
           THEN 'Prior {% parameter period %} to Date'
           ELSE NULL
           END ;;
@@ -78,9 +78,9 @@ view: +gcp_billing_export {
     view_label: "Period over Period"
     type: number
     sql: CASE WHEN ${period_selected} = 'This {% parameter period %} to Date'
-          THEN DATE_DIFF(${gcp_billing_export.usage_start_date}, ${first_date_in_period}, DAY)
+          THEN DATE_DIFF(${gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_date}, ${first_date_in_period}, DAY)
           WHEN ${period_selected} = 'Prior {% parameter period %} to Date'
-          THEN DATE_DIFF(${gcp_billing_export.usage_start_date}, ${first_date_in_prior_period}, DAY)
+          THEN DATE_DIFF(${gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_date}, ${first_date_in_prior_period}, DAY)
           ELSE NULL END;;
   }
 

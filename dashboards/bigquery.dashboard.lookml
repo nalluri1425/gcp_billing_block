@@ -66,17 +66,17 @@
   - title: Analysis Unit
     name: Analysis Unit
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: looker_line
-    fields: [gcp_billing_export.usage__amount_in_calculated_units, gcp_billing_export.usage_start_month,
+    fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage__amount_in_calculated_units, gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month,
       pricing.pricing_type]
     pivots: [pricing.pricing_type]
-    fill_fields: [gcp_billing_export.usage_start_month]
+    fill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month]
     filters:
-      gcp_billing_export.service__description: BigQuery%
+      gcp_billing_export_v1_0100A3_749310_A12E96.service__description: BigQuery%
       pricing.pricing_category: Analytics
       pricing.pricing_type: Analysis%,Flat rate%
-    sorts: [gcp_billing_export.usage_start_month desc, pricing.pricing_type]
+    sorts: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month desc, pricing.pricing_type]
     limit: 500
     column_limit: 50
     x_axis_gridlines: false
@@ -116,7 +116,7 @@
     defaults_version: 1
     title_hidden: true
     listen:
-      Project ID: gcp_billing_export.project__id
+      Project ID: gcp_billing_export_v1_0100A3_749310_A12E96.project__id
     row: 6
     col: 0
     width: 12
@@ -124,17 +124,17 @@
   - title: Storage Unit
     name: Storage Unit
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: looker_line
-    fields: [gcp_billing_export.usage__amount_in_calculated_units, gcp_billing_export.usage_start_month,
+    fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage__amount_in_calculated_units, gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month,
       pricing.pricing_type]
     pivots: [pricing.pricing_type]
-    fill_fields: [gcp_billing_export.usage_start_month]
+    fill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month]
     filters:
-      gcp_billing_export.service__description: BigQuery%
+      gcp_billing_export_v1_0100A3_749310_A12E96.service__description: BigQuery%
       pricing.pricing_category: Analytics
       pricing.pricing_type: Storage%
-    sorts: [gcp_billing_export.usage_start_month desc, pricing.pricing_type]
+    sorts: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month desc, pricing.pricing_type]
     limit: 500
     column_limit: 50
     x_axis_gridlines: false
@@ -179,7 +179,7 @@
     defaults_version: 1
     title_hidden: true
     listen:
-      Project ID: gcp_billing_export.project__id
+      Project ID: gcp_billing_export_v1_0100A3_749310_A12E96.project__id
     row: 26
     col: 0
     width: 12
@@ -187,17 +187,17 @@
   - title: Streaming Unit
     name: Streaming Unit
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: looker_line
-    fields: [gcp_billing_export.usage__amount_in_calculated_units, gcp_billing_export.usage_start_month,
+    fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage__amount_in_calculated_units, gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month,
       pricing.pricing_type]
     pivots: [pricing.pricing_type]
-    fill_fields: [gcp_billing_export.usage_start_month]
+    fill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month]
     filters:
-      gcp_billing_export.service__description: BigQuery%
+      gcp_billing_export_v1_0100A3_749310_A12E96.service__description: BigQuery%
       pricing.pricing_category: Analytics
       pricing.pricing_type: Streaming%
-    sorts: [gcp_billing_export.usage_start_month desc, pricing.pricing_type]
+    sorts: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month desc, pricing.pricing_type]
     limit: 500
     column_limit: 50
     x_axis_gridlines: false
@@ -237,7 +237,7 @@
     defaults_version: 1
     title_hidden: true
     listen:
-      Project ID: gcp_billing_export.project__id
+      Project ID: gcp_billing_export_v1_0100A3_749310_A12E96.project__id
     row: 16
     col: 0
     width: 12
@@ -245,16 +245,16 @@
   - title: Analysis Cost
     name: Analysis Cost
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: looker_column
-    fields: [gcp_billing_export.usage_start_month, pricing.pricing_type, gcp_billing_export.total_cost]
+    fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month, pricing.pricing_type, gcp_billing_export_v1_0100A3_749310_A12E96.total_cost]
     pivots: [pricing.pricing_type]
-    fill_fields: [gcp_billing_export.usage_start_month]
+    fill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month]
     filters:
-      gcp_billing_export.service__description: BigQuery%
+      gcp_billing_export_v1_0100A3_749310_A12E96.service__description: BigQuery%
       pricing.pricing_category: Analytics
       pricing.pricing_type: Analysis%,Flat rate%
-    sorts: [gcp_billing_export.usage_start_month desc, pricing.pricing_type]
+    sorts: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month desc, pricing.pricing_type]
     limit: 500
     column_limit: 50
     x_axis_gridlines: false
@@ -299,7 +299,7 @@
     defaults_version: 1
     title_hidden: true
     listen:
-      Project ID: gcp_billing_export.project__id
+      Project ID: gcp_billing_export_v1_0100A3_749310_A12E96.project__id
     row: 6
     col: 12
     width: 12
@@ -307,16 +307,16 @@
   - title: Streaming Cost
     name: Streaming Cost
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: looker_column
-    fields: [gcp_billing_export.usage_start_month, pricing.pricing_type, gcp_billing_export.total_cost]
+    fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month, pricing.pricing_type, gcp_billing_export_v1_0100A3_749310_A12E96.total_cost]
     pivots: [pricing.pricing_type]
-    fill_fields: [gcp_billing_export.usage_start_month]
+    fill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month]
     filters:
-      gcp_billing_export.service__description: BigQuery%
+      gcp_billing_export_v1_0100A3_749310_A12E96.service__description: BigQuery%
       pricing.pricing_category: Analytics
       pricing.pricing_type: Streaming%
-    sorts: [gcp_billing_export.usage_start_month desc, pricing.pricing_type]
+    sorts: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month desc, pricing.pricing_type]
     limit: 500
     column_limit: 50
     x_axis_gridlines: false
@@ -361,7 +361,7 @@
     defaults_version: 1
     title_hidden: true
     listen:
-      Project ID: gcp_billing_export.project__id
+      Project ID: gcp_billing_export_v1_0100A3_749310_A12E96.project__id
     row: 16
     col: 12
     width: 12
@@ -369,16 +369,16 @@
   - title: Storage Cost
     name: Storage Cost
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: looker_column
-    fields: [gcp_billing_export.usage_start_month, pricing.pricing_type, gcp_billing_export.total_cost]
+    fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month, pricing.pricing_type, gcp_billing_export_v1_0100A3_749310_A12E96.total_cost]
     pivots: [pricing.pricing_type]
-    fill_fields: [gcp_billing_export.usage_start_month]
+    fill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month]
     filters:
-      gcp_billing_export.service__description: BigQuery%
+      gcp_billing_export_v1_0100A3_749310_A12E96.service__description: BigQuery%
       pricing.pricing_category: Analytics
       pricing.pricing_type: Storage%
-    sorts: [gcp_billing_export.usage_start_month desc, pricing.pricing_type]
+    sorts: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month desc, pricing.pricing_type]
     limit: 500
     column_limit: 50
     x_axis_gridlines: false
@@ -423,7 +423,7 @@
     defaults_version: 1
     title_hidden: true
     listen:
-      Project ID: gcp_billing_export.project__id
+      Project ID: gcp_billing_export_v1_0100A3_749310_A12E96.project__id
     row: 26
     col: 12
     width: 12
@@ -440,6 +440,6 @@
       display: popover
       options: []
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     listens_to_filters: []
-    field: gcp_billing_export.project__id
+    field: gcp_billing_export_v1_0100A3_749310_A12E96.project__id

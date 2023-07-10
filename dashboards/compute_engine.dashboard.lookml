@@ -104,17 +104,17 @@
   - title: Cores Usage Amount by Type
     name: Cores Usage Amount by Type
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: looker_line
-    fields: [gcp_billing_export.usage__amount_in_calculated_units, gcp_billing_export.usage_start_month,
+    fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage__amount_in_calculated_units, gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month,
       pricing.pricing_usage_type]
     pivots: [pricing.pricing_usage_type]
-    fill_fields: [gcp_billing_export.usage_start_month]
+    fill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month]
     filters:
-      gcp_billing_export.service__description: Compute Engine
+      gcp_billing_export_v1_0100A3_749310_A12E96.service__description: Compute Engine
       pricing.pricing_category: VM
       pricing.pricing_type: Cores%
-    sorts: [gcp_billing_export.usage_start_month desc, pricing.pricing_usage_type]
+    sorts: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month desc, pricing.pricing_usage_type]
     limit: 500
     column_limit: 50
     x_axis_gridlines: false
@@ -161,16 +161,16 @@
   - title: Cores Cost by Usage Type
     name: Cores Cost by Usage Type
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: looker_column
-    fields: [gcp_billing_export.usage_start_month, pricing.pricing_usage_type, gcp_billing_export.total_cost]
+    fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month, pricing.pricing_usage_type, gcp_billing_export_v1_0100A3_749310_A12E96.total_cost]
     pivots: [pricing.pricing_usage_type]
-    fill_fields: [gcp_billing_export.usage_start_month]
+    fill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month]
     filters:
-      gcp_billing_export.service__description: Compute Engine
+      gcp_billing_export_v1_0100A3_749310_A12E96.service__description: Compute Engine
       pricing.pricing_category: VM
       pricing.pricing_type: Cores%
-    sorts: [gcp_billing_export.usage_start_month desc, pricing.pricing_usage_type]
+    sorts: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month desc, pricing.pricing_usage_type]
     limit: 500
     column_limit: 50
     x_axis_gridlines: false
@@ -222,12 +222,12 @@
   - title: Core Instance Generation
     name: Core Instance Generation
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: looker_grid
     fields: [pricing.pricing_type, pricing.pricing_sub_type, pricing.pricing_usage_type,
-      gcp_billing_export.total_cost]
+      gcp_billing_export_v1_0100A3_749310_A12E96.total_cost]
     filters:
-      gcp_billing_export.service__description: Compute Engine
+      gcp_billing_export_v1_0100A3_749310_A12E96.service__description: Compute Engine
       pricing.pricing_category: VM
       pricing.pricing_type: Cores%
     sorts: [pricing.pricing_type]
@@ -284,16 +284,16 @@
   - title: Cores Cost by Usage Type (Copy)
     name: Cores Cost by Usage Type (Copy)
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: looker_column
-    fields: [gcp_billing_export.usage_start_month, pricing.pricing_usage_type, gcp_billing_export.total_cost]
+    fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month, pricing.pricing_usage_type, gcp_billing_export_v1_0100A3_749310_A12E96.total_cost]
     pivots: [pricing.pricing_usage_type]
-    fill_fields: [gcp_billing_export.usage_start_month]
+    fill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month]
     filters:
-      gcp_billing_export.service__description: Compute Engine
+      gcp_billing_export_v1_0100A3_749310_A12E96.service__description: Compute Engine
       pricing.pricing_category: VM
       pricing.pricing_type: ''
-    sorts: [gcp_billing_export.usage_start_month desc, pricing.pricing_usage_type]
+    sorts: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month desc, pricing.pricing_usage_type]
     limit: 500
     column_limit: 50
     x_axis_gridlines: false
@@ -344,17 +344,17 @@
   - title: Cores Usage Amount by Type (Copy)
     name: Cores Usage Amount by Type (Copy)
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: looker_line
-    fields: [gcp_billing_export.usage__amount_in_calculated_units, gcp_billing_export.usage_start_month,
+    fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage__amount_in_calculated_units, gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month,
       pricing.pricing_usage_type]
     pivots: [pricing.pricing_usage_type]
-    fill_fields: [gcp_billing_export.usage_start_month]
+    fill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month]
     filters:
-      gcp_billing_export.service__description: Compute Engine
+      gcp_billing_export_v1_0100A3_749310_A12E96.service__description: Compute Engine
       pricing.pricing_category: VM
       pricing.pricing_type: RAM%
-    sorts: [gcp_billing_export.usage_start_month desc, pricing.pricing_usage_type]
+    sorts: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month desc, pricing.pricing_usage_type]
     limit: 500
     column_limit: 50
     x_axis_gridlines: false
@@ -400,12 +400,12 @@
   - title: Core Instance Generation (Copy)
     name: Core Instance Generation (Copy)
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: looker_grid
     fields: [pricing.pricing_type, pricing.pricing_sub_type, pricing.pricing_usage_type,
-      gcp_billing_export.total_cost]
+      gcp_billing_export_v1_0100A3_749310_A12E96.total_cost]
     filters:
-      gcp_billing_export.service__description: Compute Engine
+      gcp_billing_export_v1_0100A3_749310_A12E96.service__description: Compute Engine
       pricing.pricing_category: VM
       pricing.pricing_type: RAM%
     sorts: [pricing.pricing_type]
@@ -461,15 +461,15 @@
   - title: Persisten Disk Usage Last 7 Days
     name: Persisten Disk Usage Last 7 Days
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: looker_grid
-    fields: [gcp_billing_export.usage_start_date, pricing.pricing_type, gcp_billing_export.usage__calculated_unit,
-      gcp_billing_export.usage__amount_in_calculated_units]
+    fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_date, pricing.pricing_type, gcp_billing_export_v1_0100A3_749310_A12E96.usage__calculated_unit,
+      gcp_billing_export_v1_0100A3_749310_A12E96.usage__amount_in_calculated_units]
     filters:
-      gcp_billing_export.service__description: Compute Engine
+      gcp_billing_export_v1_0100A3_749310_A12E96.service__description: Compute Engine
       pricing.pricing_category: Persistent Disk
-      gcp_billing_export.usage_start_date: 7 days
-    sorts: [gcp_billing_export.usage_start_date desc]
+      gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_date: 7 days
+    sorts: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_date desc]
     limit: 500
     column_limit: 50
     total: true
@@ -524,15 +524,15 @@
   - title: Persistent Disk Usage
     name: Persistent Disk Usage
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: looker_column
-    fields: [pricing.pricing_type, gcp_billing_export.usage_start_month, gcp_billing_export.total_cost]
+    fields: [pricing.pricing_type, gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month, gcp_billing_export_v1_0100A3_749310_A12E96.total_cost]
     pivots: [pricing.pricing_type]
-    fill_fields: [gcp_billing_export.usage_start_month]
+    fill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month]
     filters:
-      gcp_billing_export.service__description: Compute Engine
+      gcp_billing_export_v1_0100A3_749310_A12E96.service__description: Compute Engine
       pricing.pricing_category: Persistent Disk
-    sorts: [pricing.pricing_type, gcp_billing_export.usage_start_month desc]
+    sorts: [pricing.pricing_type, gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month desc]
     limit: 500
     column_limit: 50
     total: true
@@ -587,16 +587,16 @@
   - title: Network Costs
     name: Network Costs
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: looker_column
-    fields: [pricing.pricing_type, gcp_billing_export.usage_start_month, gcp_billing_export.total_cost]
+    fields: [pricing.pricing_type, gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month, gcp_billing_export_v1_0100A3_749310_A12E96.total_cost]
     pivots: [pricing.pricing_type]
-    fill_fields: [gcp_billing_export.usage_start_month]
+    fill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month]
     filters:
-      gcp_billing_export.service__description: Compute Engine
+      gcp_billing_export_v1_0100A3_749310_A12E96.service__description: Compute Engine
       pricing.pricing_category: Network
       pricing.pricing_type: Egress%,Ingress%
-    sorts: [pricing.pricing_type, gcp_billing_export.usage_start_month desc]
+    sorts: [pricing.pricing_type, gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month desc]
     limit: 500
     column_limit: 50
     total: true
@@ -651,16 +651,16 @@
   - title: Network Calculated Units
     name: Network Calculated Units
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: looker_line
-    fields: [pricing.pricing_type, gcp_billing_export.usage_start_month, gcp_billing_export.usage__amount_in_calculated_units]
+    fields: [pricing.pricing_type, gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month, gcp_billing_export_v1_0100A3_749310_A12E96.usage__amount_in_calculated_units]
     pivots: [pricing.pricing_type]
-    fill_fields: [gcp_billing_export.usage_start_month]
+    fill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month]
     filters:
-      gcp_billing_export.service__description: Compute Engine
+      gcp_billing_export_v1_0100A3_749310_A12E96.service__description: Compute Engine
       pricing.pricing_category: Network
       pricing.pricing_type: Egress%,Ingress%
-    sorts: [pricing.pricing_type, gcp_billing_export.usage_start_month desc]
+    sorts: [pricing.pricing_type, gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month desc]
     limit: 500
     column_limit: 50
     total: true

@@ -6,17 +6,17 @@
   - title: YTD Costs
     name: YTD Costs
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: single_value
-    fields: [gcp_billing_export.total_cost, gcp_billing_export.period_selected]
+    fields: [gcp_billing_export_v1_0100A3_749310_A12E96.total_cost, gcp_billing_export_v1_0100A3_749310_A12E96.period_selected]
     filters:
-      gcp_billing_export.period: Year
-      gcp_billing_export.period_selected: "-NULL"
-    sorts: [gcp_billing_export.total_cost desc]
+      gcp_billing_export_v1_0100A3_749310_A12E96.period: Year
+      gcp_billing_export_v1_0100A3_749310_A12E96.period_selected: "-NULL"
+    sorts: [gcp_billing_export_v1_0100A3_749310_A12E96.total_cost desc]
     limit: 500
     column_limit: 50
-    dynamic_fields: [{table_calculation: change, label: Change, expression: "(${gcp_billing_export.total_cost}-offset(${gcp_billing_export.total_cost},1))\n\
-          /if(${gcp_billing_export.total_cost}=0,null,${gcp_billing_export.total_cost})",
+    dynamic_fields: [{table_calculation: change, label: Change, expression: "(${gcp_billing_export_v1_0100A3_749310_A12E96.total_cost}-offset(${gcp_billing_export_v1_0100A3_749310_A12E96.total_cost},1))\n\
+          /if(${gcp_billing_export_v1_0100A3_749310_A12E96.total_cost}=0,null,${gcp_billing_export_v1_0100A3_749310_A12E96.total_cost})",
         value_format: !!null '', value_format_name: percent_2, _kind_hint: measure,
         _type_hint: number}]
     custom_color_enabled: true
@@ -59,14 +59,14 @@
     series_types: {}
     show_null_points: true
     interpolation: linear
-    hidden_fields: [gcp_billing_export.period_selected]
+    hidden_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.period_selected]
     note_state: collapsed
     note_display: hover
     note_text: All costs for this year up until today's date compared with last year's
       costs, from the beginning of last year until the same day last year
     listen:
-      Project ID: gcp_billing_export.project__id
-      Service Type: gcp_billing_export.service__description
+      Project ID: gcp_billing_export_v1_0100A3_749310_A12E96.project__id
+      Service Type: gcp_billing_export_v1_0100A3_749310_A12E96.service__description
     row: 2
     col: 0
     width: 8
@@ -74,17 +74,17 @@
   - title: QTD Costs
     name: QTD Costs
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: single_value
-    fields: [gcp_billing_export.total_cost, gcp_billing_export.period_selected]
+    fields: [gcp_billing_export_v1_0100A3_749310_A12E96.total_cost, gcp_billing_export_v1_0100A3_749310_A12E96.period_selected]
     filters:
-      gcp_billing_export.period: Quarter
-      gcp_billing_export.period_selected: "-NULL"
-    sorts: [gcp_billing_export.total_cost desc]
+      gcp_billing_export_v1_0100A3_749310_A12E96.period: Quarter
+      gcp_billing_export_v1_0100A3_749310_A12E96.period_selected: "-NULL"
+    sorts: [gcp_billing_export_v1_0100A3_749310_A12E96.total_cost desc]
     limit: 500
     column_limit: 50
-    dynamic_fields: [{table_calculation: change, label: Change, expression: "(${gcp_billing_export.total_cost}-offset(${gcp_billing_export.total_cost},1))\n\
-          /if(${gcp_billing_export.total_cost}=0,null,${gcp_billing_export.total_cost})",
+    dynamic_fields: [{table_calculation: change, label: Change, expression: "(${gcp_billing_export_v1_0100A3_749310_A12E96.total_cost}-offset(${gcp_billing_export_v1_0100A3_749310_A12E96.total_cost},1))\n\
+          /if(${gcp_billing_export_v1_0100A3_749310_A12E96.total_cost}=0,null,${gcp_billing_export_v1_0100A3_749310_A12E96.total_cost})",
         value_format: !!null '', value_format_name: percent_2, _kind_hint: measure,
         _type_hint: number}]
     custom_color_enabled: true
@@ -127,15 +127,15 @@
     series_types: {}
     show_null_points: true
     interpolation: linear
-    hidden_fields: [gcp_billing_export.period_selected]
+    hidden_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.period_selected]
     note_state: collapsed
     note_display: hover
     note_text: All costs for this quarter up until today's date compared with last
       quarter's costs, from the beginning of last quarter until the same day last
       quarter
     listen:
-      Project ID: gcp_billing_export.project__id
-      Service Type: gcp_billing_export.service__description
+      Project ID: gcp_billing_export_v1_0100A3_749310_A12E96.project__id
+      Service Type: gcp_billing_export_v1_0100A3_749310_A12E96.service__description
     row: 2
     col: 8
     width: 8
@@ -143,17 +143,17 @@
   - title: MTD Costs
     name: MTD Costs
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: single_value
-    fields: [gcp_billing_export.total_cost, gcp_billing_export.period_selected]
+    fields: [gcp_billing_export_v1_0100A3_749310_A12E96.total_cost, gcp_billing_export_v1_0100A3_749310_A12E96.period_selected]
     filters:
-      gcp_billing_export.period: Month
-      gcp_billing_export.period_selected: "-NULL"
-    sorts: [gcp_billing_export.total_cost desc]
+      gcp_billing_export_v1_0100A3_749310_A12E96.period: Month
+      gcp_billing_export_v1_0100A3_749310_A12E96.period_selected: "-NULL"
+    sorts: [gcp_billing_export_v1_0100A3_749310_A12E96.total_cost desc]
     limit: 500
     column_limit: 50
-    dynamic_fields: [{table_calculation: change, label: Change, expression: "(${gcp_billing_export.total_cost}-offset(${gcp_billing_export.total_cost},1))\n\
-          /if(${gcp_billing_export.total_cost}=0,null,${gcp_billing_export.total_cost})",
+    dynamic_fields: [{table_calculation: change, label: Change, expression: "(${gcp_billing_export_v1_0100A3_749310_A12E96.total_cost}-offset(${gcp_billing_export_v1_0100A3_749310_A12E96.total_cost},1))\n\
+          /if(${gcp_billing_export_v1_0100A3_749310_A12E96.total_cost}=0,null,${gcp_billing_export_v1_0100A3_749310_A12E96.total_cost})",
         value_format: !!null '', value_format_name: percent_2, _kind_hint: measure,
         _type_hint: number}]
     custom_color_enabled: true
@@ -196,14 +196,14 @@
     series_types: {}
     show_null_points: true
     interpolation: linear
-    hidden_fields: [gcp_billing_export.period_selected]
+    hidden_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.period_selected]
     note_state: collapsed
     note_display: hover
     note_text: All costs for this month up until today's date compared with last month's
       costs, from the beginning of last month until the same day month year
     listen:
-      Project ID: gcp_billing_export.project__id
-      Service Type: gcp_billing_export.service__description
+      Project ID: gcp_billing_export_v1_0100A3_749310_A12E96.project__id
+      Service Type: gcp_billing_export_v1_0100A3_749310_A12E96.service__description
     row: 2
     col: 16
     width: 8
@@ -211,17 +211,17 @@
   - title: YTD Cost Trends
     name: YTD Cost Trends
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: looker_line
-    fields: [gcp_billing_export.total_cost, gcp_billing_export.usage_start_month_name,
-      gcp_billing_export.usage_start_year, gcp_billing_export.currency]
-    pivots: [gcp_billing_export.usage_start_year]
-    fill_fields: [gcp_billing_export.usage_start_year]
+    fields: [gcp_billing_export_v1_0100A3_749310_A12E96.total_cost, gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month_name,
+      gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_year, gcp_billing_export_v1_0100A3_749310_A12E96.currency]
+    pivots: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_year]
+    fill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_year]
     filters:
-      gcp_billing_export.usage_start_year: 3 years
-    sorts: [gcp_billing_export.usage_start_year 0, gcp_billing_export.usage_start_month_name]
+      gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_year: 3 years
+    sorts: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_year 0, gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month_name]
     limit: 500
-    dynamic_fields: [{table_calculation: mom_change, label: MoM Change $, expression: "${gcp_billing_export.total_cost}-offset(${gcp_billing_export.total_cost},-1)",
+    dynamic_fields: [{table_calculation: mom_change, label: MoM Change $, expression: "${gcp_billing_export_v1_0100A3_749310_A12E96.total_cost}-offset(${gcp_billing_export_v1_0100A3_749310_A12E96.total_cost},-1)",
         value_format: !!null '', value_format_name: usd, _kind_hint: measure, _type_hint: number}]
     x_axis_gridlines: false
     y_axis_gridlines: false
@@ -249,21 +249,21 @@
     interpolation: linear
     y_axes: [{label: '', orientation: left, series: [{axisId: mom_change, id: 2020
               - mom_change, name: 2020 - MoM Change $}, {axisId: mom_change, id: 2021
-              - mom_change, name: 2021 - MoM Change $}, {axisId: gcp_billing_export.total_cost,
-            id: 2020 - gcp_billing_export.total_cost, name: 2020 - Gcp Billing Export
-              Total Cost}, {axisId: gcp_billing_export.total_cost, id: 2021 - gcp_billing_export.total_cost,
+              - mom_change, name: 2021 - MoM Change $}, {axisId: gcp_billing_export_v1_0100A3_749310_A12E96.total_cost,
+            id: 2020 - gcp_billing_export_v1_0100A3_749310_A12E96.total_cost, name: 2020 - Gcp Billing Export
+              Total Cost}, {axisId: gcp_billing_export_v1_0100A3_749310_A12E96.total_cost, id: 2021 - gcp_billing_export_v1_0100A3_749310_A12E96.total_cost,
             name: 2021 - Gcp Billing Export Total Cost}], showLabels: false, showValues: true,
         unpinAxis: false, tickDensity: default, tickDensityCustom: 5, type: linear}]
-    hidden_series: [2019 - gcp_billing_export.total_cost, 2019 - mom_change]
+    hidden_series: [2019 - gcp_billing_export_v1_0100A3_749310_A12E96.total_cost, 2019 - mom_change]
     series_types:
-      2019 - gcp_billing_export.total_cost: column
-      2020 - gcp_billing_export.total_cost: column
-      2021 - gcp_billing_export.total_cost: column
+      2019 - gcp_billing_export_v1_0100A3_749310_A12E96.total_cost: column
+      2020 - gcp_billing_export_v1_0100A3_749310_A12E96.total_cost: column
+      2021 - gcp_billing_export_v1_0100A3_749310_A12E96.total_cost: column
     series_colors:
       2021 - mom_change: "#EA4335"
-      2019 - gcp_billing_export.total_cost: "#E57947"
+      2019 - gcp_billing_export_v1_0100A3_749310_A12E96.total_cost: "#E57947"
       2019 - mom_change: "#BDC1C6"
-      2021 - gcp_billing_export.total_cost: "#4285F4"
+      2021 - gcp_billing_export_v1_0100A3_749310_A12E96.total_cost: "#4285F4"
     series_labels: {}
     ordering: none
     show_null_labels: false
@@ -280,10 +280,10 @@
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
     defaults_version: 1
-    hidden_fields: [gcp_billing_export.currency]
+    hidden_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.currency]
     listen:
-      Project ID: gcp_billing_export.project__id
-      Service Type: gcp_billing_export.service__description
+      Project ID: gcp_billing_export_v1_0100A3_749310_A12E96.project__id
+      Service Type: gcp_billing_export_v1_0100A3_749310_A12E96.service__description
     row: 5
     col: 8
     width: 16
@@ -291,17 +291,17 @@
   - title: YTD Cost by Service
     name: YTD Cost by Service
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: looker_pie
-    fields: [gcp_billing_export.total_cost, gcp_billing_export.service__description]
+    fields: [gcp_billing_export_v1_0100A3_749310_A12E96.total_cost, gcp_billing_export_v1_0100A3_749310_A12E96.service__description]
     filters:
-      gcp_billing_export.period: Year
-      gcp_billing_export.period_selected: This Year to Date
-    sorts: [gcp_billing_export.total_cost desc]
+      gcp_billing_export_v1_0100A3_749310_A12E96.period: Year
+      gcp_billing_export_v1_0100A3_749310_A12E96.period_selected: This Year to Date
+    sorts: [gcp_billing_export_v1_0100A3_749310_A12E96.total_cost desc]
     limit: 500
     column_limit: 50
-    dynamic_fields: [{table_calculation: change, label: Change, expression: "(${gcp_billing_export.total_cost}-offset(${gcp_billing_export.total_cost},1))\n\
-          /if(${gcp_billing_export.total_cost}=0,null,${gcp_billing_export.total_cost})",
+    dynamic_fields: [{table_calculation: change, label: Change, expression: "(${gcp_billing_export_v1_0100A3_749310_A12E96.total_cost}-offset(${gcp_billing_export_v1_0100A3_749310_A12E96.total_cost},1))\n\
+          /if(${gcp_billing_export_v1_0100A3_749310_A12E96.total_cost}=0,null,${gcp_billing_export_v1_0100A3_749310_A12E96.total_cost})",
         value_format: !!null '', value_format_name: percent_2, _kind_hint: measure,
         _type_hint: number, is_disabled: true}]
     value_labels: legend
@@ -349,8 +349,8 @@
     interpolation: linear
     hidden_fields: []
     listen:
-      Project ID: gcp_billing_export.project__id
-      Service Type: gcp_billing_export.service__description
+      Project ID: gcp_billing_export_v1_0100A3_749310_A12E96.project__id
+      Service Type: gcp_billing_export_v1_0100A3_749310_A12E96.service__description
     row: 5
     col: 0
     width: 8
@@ -358,17 +358,17 @@
   - title: Monthly Cost by Service
     name: Monthly Cost by Service
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: looker_line
-    fields: [gcp_billing_export.usage_start_month, gcp_billing_export.total_cost,
-      gcp_billing_export.service__description]
-    pivots: [gcp_billing_export.service__description]
-    fill_fields: [gcp_billing_export.usage_start_month]
+    fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month, gcp_billing_export_v1_0100A3_749310_A12E96.total_cost,
+      gcp_billing_export_v1_0100A3_749310_A12E96.service__description]
+    pivots: [gcp_billing_export_v1_0100A3_749310_A12E96.service__description]
+    fill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month]
     filters:
-      gcp_billing_export.usage_start_year: 12 months
-    sorts: [gcp_billing_export.usage_start_month desc, gcp_billing_export.service__description]
+      gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_year: 12 months
+    sorts: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month desc, gcp_billing_export_v1_0100A3_749310_A12E96.service__description]
     limit: 500
-    dynamic_fields: [{table_calculation: mom_change, label: MoM Change $, expression: "${gcp_billing_export.total_cost}-offset(${gcp_billing_export.total_cost},1)",
+    dynamic_fields: [{table_calculation: mom_change, label: MoM Change $, expression: "${gcp_billing_export_v1_0100A3_749310_A12E96.total_cost}-offset(${gcp_billing_export_v1_0100A3_749310_A12E96.total_cost},1)",
         value_format: !!null '', value_format_name: usd, _kind_hint: measure, _type_hint: number,
         is_disabled: true}]
     x_axis_gridlines: false
@@ -395,17 +395,17 @@
     y_axis_combined: true
     show_null_points: false
     interpolation: monotone
-    y_axes: [{label: '', orientation: left, series: [{axisId: gcp_billing_export.total_cost,
-            id: BigQuery - gcp_billing_export.total_cost, name: BigQuery}, {axisId: gcp_billing_export.total_cost,
-            id: Cloud Build - gcp_billing_export.total_cost, name: Cloud Build}, {
-            axisId: gcp_billing_export.total_cost, id: Cloud Functions - gcp_billing_export.total_cost,
-            name: Cloud Functions}, {axisId: gcp_billing_export.total_cost, id: Cloud
-              Pub/Sub - gcp_billing_export.total_cost, name: Cloud Pub/Sub}, {axisId: gcp_billing_export.total_cost,
-            id: Cloud Scheduler - gcp_billing_export.total_cost, name: Cloud Scheduler},
-          {axisId: gcp_billing_export.total_cost, id: Cloud Storage - gcp_billing_export.total_cost,
-            name: Cloud Storage}, {axisId: gcp_billing_export.total_cost, id: Compute
-              Engine - gcp_billing_export.total_cost, name: Compute Engine}, {axisId: gcp_billing_export.total_cost,
-            id: Stackdriver Logging - gcp_billing_export.total_cost, name: Stackdriver
+    y_axes: [{label: '', orientation: left, series: [{axisId: gcp_billing_export_v1_0100A3_749310_A12E96.total_cost,
+            id: BigQuery - gcp_billing_export_v1_0100A3_749310_A12E96.total_cost, name: BigQuery}, {axisId: gcp_billing_export_v1_0100A3_749310_A12E96.total_cost,
+            id: Cloud Build - gcp_billing_export_v1_0100A3_749310_A12E96.total_cost, name: Cloud Build}, {
+            axisId: gcp_billing_export_v1_0100A3_749310_A12E96.total_cost, id: Cloud Functions - gcp_billing_export_v1_0100A3_749310_A12E96.total_cost,
+            name: Cloud Functions}, {axisId: gcp_billing_export_v1_0100A3_749310_A12E96.total_cost, id: Cloud
+              Pub/Sub - gcp_billing_export_v1_0100A3_749310_A12E96.total_cost, name: Cloud Pub/Sub}, {axisId: gcp_billing_export_v1_0100A3_749310_A12E96.total_cost,
+            id: Cloud Scheduler - gcp_billing_export_v1_0100A3_749310_A12E96.total_cost, name: Cloud Scheduler},
+          {axisId: gcp_billing_export_v1_0100A3_749310_A12E96.total_cost, id: Cloud Storage - gcp_billing_export_v1_0100A3_749310_A12E96.total_cost,
+            name: Cloud Storage}, {axisId: gcp_billing_export_v1_0100A3_749310_A12E96.total_cost, id: Compute
+              Engine - gcp_billing_export_v1_0100A3_749310_A12E96.total_cost, name: Compute Engine}, {axisId: gcp_billing_export_v1_0100A3_749310_A12E96.total_cost,
+            id: Stackdriver Logging - gcp_billing_export_v1_0100A3_749310_A12E96.total_cost, name: Stackdriver
               Logging}], showLabels: false, showValues: true, unpinAxis: false, tickDensity: default,
         type: linear}]
     hidden_series: []
@@ -428,8 +428,8 @@
     conditional_formatting_include_nulls: false
     defaults_version: 1
     listen:
-      Project ID: gcp_billing_export.project__id
-      Service Type: gcp_billing_export.service__description
+      Project ID: gcp_billing_export_v1_0100A3_749310_A12E96.project__id
+      Service Type: gcp_billing_export_v1_0100A3_749310_A12E96.service__description
     row: 13
     col: 12
     width: 12
@@ -457,13 +457,13 @@
   - title: Credit Breakdown
     name: Credit Breakdown
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: looker_area
-    fields: [gcp_billing_export.usage_start_month, gcp_billing_export__credits.total_amount]
-    fill_fields: [gcp_billing_export.usage_start_month]
+    fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month, gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_amount]
+    fill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month]
     filters:
-      gcp_billing_export.usage_start_month: 12 months
-    sorts: [gcp_billing_export.usage_start_month desc]
+      gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month: 12 months
+    sorts: [gcp_billing_export_v1_0100A3_749310_A12E96.usage_start_month desc]
     limit: 500
     column_limit: 50
     x_axis_gridlines: false
@@ -497,11 +497,11 @@
     show_null_labels: false
     series_types: {}
     series_colors:
-      gcp_billing_export__credits.total_amount: "#34A853"
+      gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_amount: "#34A853"
     series_labels:
-      gcp_billing_export__credits.total_amount: Credits
-      gcp_billing_export.total_cost: Gross Cost
-      gcp_billing_export.total_net_cost: Net Cost
+      gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_amount: Credits
+      gcp_billing_export_v1_0100A3_749310_A12E96.total_cost: Gross Cost
+      gcp_billing_export_v1_0100A3_749310_A12E96.total_net_cost: Net Cost
     custom_color_enabled: true
     show_single_value_title: true
     show_comparison: false
@@ -515,8 +515,8 @@
     hidden_fields: []
     y_axes: []
     listen:
-      Project ID: gcp_billing_export.project__id
-      Service Type: gcp_billing_export.service__description
+      Project ID: gcp_billing_export_v1_0100A3_749310_A12E96.project__id
+      Service Type: gcp_billing_export_v1_0100A3_749310_A12E96.service__description
     row: 13
     col: 0
     width: 12
@@ -533,9 +533,9 @@
       display: popover
       options: []
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     listens_to_filters: []
-    field: gcp_billing_export.project__id
+    field: gcp_billing_export_v1_0100A3_749310_A12E96.project__id
   - name: Service Type
     title: Service Type
     type: field_filter
@@ -547,6 +547,6 @@
       display: popover
       options: []
     model: gcp_billing_block
-    explore: gcp_billing_export
+    explore: gcp_billing_export_v1_0100A3_749310_A12E96
     listens_to_filters: []
-    field: gcp_billing_export.service__description
+    field: gcp_billing_export_v1_0100A3_749310_A12E96.service__description
