@@ -764,4 +764,4 @@
     model: gcp_billing_block
     explore: recommendations_export
     listens_to_filters: []
-    field: recommendations_export.cloud_entity_id
+    field: recommendations_export.project_name
