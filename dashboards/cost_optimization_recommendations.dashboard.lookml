@@ -12,6 +12,7 @@
     filters:
       recommendations_export.service: Compute Engine
       recommendations_export.category: VM
+      recommendations_export.primary_impact__cost_projection__cost__units: NOT NULL
     limit: 500
     column_limit: 50
     custom_color_enabled: true
@@ -29,7 +30,7 @@
       Project ID: recommendations_export.cloud_entity_id
     row: 4
     col: 19
-    width: 5
+    width: 6
     height: 3
   - name: VM Recommendations
     type: text
@@ -41,7 +42,7 @@
       and stop idle VM instances to reduce waste of resources as well as use CUD recommender
       to optimize commitments. [Checkout more information in our public documentation.](https://cloud.google.com/recommender/docs/recommenders) '
     row: 4
-    col: 3
+    col: 2
     width: 16
     height: 3
   - name: Persistent Disk Recommendations
@@ -54,11 +55,11 @@
       and reduce your compute bill. For PDs that are not actively used, create a backup
       snapshot and delete the PD. [Checkout more information in our public documentation.](https://cloud.google.com/recommender/docs/recommenders)
     row: 17
-    col: 3
+    col: 2
     width: 16
     height: 3
   - title: Total Savings
-    name: Total Savings (2)
+    name: Total Savings (1)
     model: gcp_billing_block
     explore: recommendations_export
     type: single_value
@@ -66,6 +67,7 @@
     filters:
       recommendations_export.service: Compute Engine
       recommendations_export.category: Persistent Disk
+      recommendations_export.primary_impact__cost_projection__cost__units: NOT NULL
     limit: 500
     column_limit: 50
     custom_color_enabled: true
@@ -83,7 +85,84 @@
       Project ID: recommendations_export.cloud_entity_id
     row: 17
     col: 19
-    width: 5
+    width: 6
+    height: 3
+  - name: BigQuery Recommendations
+    type: text
+    title_text: BigQuery Recommendations
+    subtitle_text: ''
+    body_text: The BigQuery partitioning and clustering recommender generates partition or cluster recommendations to optimize your BigQuery tables. The recommender analyzes workflows on your BigQuery tables and offers recommendations to better optimize your workflows and query costs using either table partitioning or table clustering and the BigQuery slot recommender creates recommendations for customer edition or on-demand workloads. The recommender analyzes historical slot usage and calculates the cost-optimal settings for edition commitment slots and autoscaling slots while maintaining similar performance.
+               [Checkout more information in our public documentation.](https://cloud.google.com/recommender/docs/recommenders)
+    row: 40
+    col: 2
+    width: 16
+    height: 3
+  - title: Total Savings
+    name: Total Savings (2)
+    model: gcp_billing_block
+    explore: recommendations_export
+    type: single_value
+    fields: [recommendations_export.total_savings]
+    filters:
+      recommendations_export.service: BigQuery
+      recommendations_export.primary_impact__cost_projection__cost__units: NOT NULL
+
+    limit: 500
+    column_limit: 50
+    custom_color_enabled: true
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    enable_conditional_formatting: false
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
+    series_types: {}
+    defaults_version: 1
+    listen:
+      Project ID: recommendations_export.cloud_entity_id
+    row: 40
+    col: 19
+    width: 6
+    height: 3
+  - title: Total Savings
+    name: Total Savings (3)
+    model: gcp_billing_block
+    explore: recommendations_export
+    type: single_value
+    fields: [recommendations_export.total_savings]
+    filters:
+      recommendations_export.service: CloudSql
+      recommendations_export.primary_impact__cost_projection__cost__units: NOT NULL
+    limit: 500
+    column_limit: 50
+    custom_color_enabled: true
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    enable_conditional_formatting: false
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
+    series_types: {}
+    defaults_version: 1
+    listen:
+      Project ID: recommendations_export.cloud_entity_id
+    row: 60
+    col: 19
+    width: 6
+    height: 3
+  - name: Cloud Sql Recommendations
+    type: text
+    title_text: Cloud Sql Recommendations
+    subtitle_text: ''
+    body_text: The Cloud SQL Idle Instance Recommender helps you detect instances that might be idle and provides you insights and recommendations to help you reduce costs, the Cloud SQL Overprovisioned Instance Recommender helps you detect instances that are unnecessarily large for a given workload. It then provides recommendations on how to resize such instances and reduce cost and the Cloud SQL Performance Recommender helps you to improve Cloud SQL instance performance.
+              [Checkout more information in our public documentation.](https://cloud.google.com/recommender/docs/recommenders)
+    row: 60
+    col: 2
+    width: 16
     height: 3
   - title: VM Recommendations
     name: VM Recommendations (2)
@@ -96,6 +175,7 @@
     filters:
       recommendations_export.service: Compute Engine
       recommendations_export.category: VM
+
     sorts: [recommendations_export.project_name]
     limit: 500
     column_limit: 50
@@ -172,6 +252,7 @@
     filters:
       recommendations_export.service: Compute Engine
       recommendations_export.category: VM
+      recommendations_export.primary_impact__cost_projection__cost__units: NOT NULL
     sorts: [recommendations_export.project_name, recommendations_export.recommender_subtype]
     limit: 500
     column_limit: 50
@@ -304,8 +385,9 @@
       recommendations_export.total_savings]
     pivots: [recommendations_export.recommender_subtype]
     filters:
-      recommendations_export.service: Compute Engine
       recommendations_export.category: Persistent Disk
+      recommendations_export.service: Compute Engine
+      recommendations_export.primary_impact__cost_projection__cost__units: NOT NULL
     sorts: [recommendations_export.project_name, recommendations_export.recommender_subtype]
     limit: 500
     column_limit: 50
@@ -359,6 +441,272 @@
     listen:
       Project ID: recommendations_export.cloud_entity_id
     row: 20
+    col: 16
+    width: 8
+    height: 8
+  - title: BQ Recommendations
+    name: BQ Recommendations
+    model: gcp_billing_block
+    explore: recommendations_export
+    type: looker_grid
+    fields: [recommendations_export.last_refresh_date, recommendations_export.project_name,
+      recommendations_export.description, recommendations_export.location, recommendations_export.recommender_subtype,
+      recommendations_export.total_savings]
+    filters:
+      recommendations_export.service: BigQuery
+    sorts: [recommendations_export.project_name]
+    limit: 500
+    column_limit: 50
+    show_view_names: false
+    show_row_numbers: true
+    transpose: false
+    truncate_text: true
+    hide_totals: false
+    hide_row_totals: false
+    size_to_fit: true
+    table_theme: white
+    limit_displayed_rows: false
+    enable_conditional_formatting: false
+    header_text_alignment: left
+    header_font_size: 12
+    rows_font_size: 12
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
+    x_axis_gridlines: false
+    y_axis_gridlines: false
+    y_axes: [{label: '', orientation: left, series: [{axisId: recommendations_export.total_savings,
+            id: recommendations_export.total_savings, name: Total Savings}], showLabels: false,
+        showValues: true, unpinAxis: false, tickDensity: default, tickDensityCustom: 5,
+        type: linear}]
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: false
+    show_x_axis_ticks: true
+    y_axis_scale_mode: linear
+    x_axis_reversed: false
+    y_axis_reversed: false
+    plot_size_by_field: false
+    trellis: ''
+    stacking: ''
+    legend_position: center
+    series_types: {}
+    point_style: none
+    show_value_labels: false
+    label_density: 25
+    x_axis_scale: auto
+    y_axis_combined: true
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: "#808080"
+    defaults_version: 1
+    title_hidden: true
+    listen:
+      Project ID: recommendations_export.cloud_entity_id
+    row: 45
+    col: 0
+    width: 16
+    height: 8
+  - title: BQ Recommendations
+    name: BQ Recommendations (2)
+    model: gcp_billing_block
+    explore: recommendations_export
+    type: looker_column
+    fields: [recommendations_export.project_name, recommendations_export.recommender_subtype,
+      recommendations_export.total_savings]
+    pivots: [recommendations_export.recommender_subtype]
+    filters:
+      recommendations_export.service: BigQuery
+      recommendations_export.primary_impact__cost_projection__cost__units: NOT NULL
+    sorts: [recommendations_export.project_name, recommendations_export.recommender_subtype]
+    limit: 500
+    column_limit: 50
+    x_axis_gridlines: false
+    y_axis_gridlines: false
+    show_view_names: false
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: false
+    show_x_axis_ticks: true
+    y_axis_scale_mode: linear
+    x_axis_reversed: false
+    y_axis_reversed: false
+    plot_size_by_field: false
+    trellis: ''
+    stacking: normal
+    limit_displayed_rows: false
+    legend_position: center
+    point_style: none
+    show_value_labels: false
+    label_density: 25
+    x_axis_scale: auto
+    y_axis_combined: true
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: "#808080"
+    y_axes: [{label: '', orientation: left, series: [{axisId: recommendations_export.total_savings,
+            id: recommendations_export.total_savings, name: Total Savings}], showLabels: false,
+        showValues: true, unpinAxis: false, tickDensity: default, tickDensityCustom: 5,
+        type: linear}]
+    series_types: {}
+    show_row_numbers: true
+    transpose: false
+    truncate_text: true
+    hide_totals: false
+    hide_row_totals: false
+    size_to_fit: true
+    table_theme: white
+    enable_conditional_formatting: false
+    header_text_alignment: left
+    header_font_size: 12
+    rows_font_size: 12
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
+    defaults_version: 1
+    title_hidden: true
+    listen:
+      Project ID: recommendations_export.cloud_entity_id
+    row: 45
+    col: 16
+    width: 8
+    height: 8
+  - title: CloudSql Recommendations
+    name: CloudSql Recommendations
+    model: gcp_billing_block
+    explore: recommendations_export
+    type: looker_grid
+    fields: [recommendations_export.last_refresh_date, recommendations_export.project_name,
+      recommendations_export.description, recommendations_export.location, recommendations_export.recommender_subtype,
+      recommendations_export.total_savings]
+    filters:
+      recommendations_export.service: CloudSql
+    sorts: [recommendations_export.project_name]
+    limit: 500
+    column_limit: 50
+    show_view_names: false
+    show_row_numbers: true
+    transpose: false
+    truncate_text: true
+    hide_totals: false
+    hide_row_totals: false
+    size_to_fit: true
+    table_theme: white
+    limit_displayed_rows: false
+    enable_conditional_formatting: false
+    header_text_alignment: left
+    header_font_size: 12
+    rows_font_size: 12
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
+    x_axis_gridlines: false
+    y_axis_gridlines: false
+    y_axes: [{label: '', orientation: left, series: [{axisId: recommendations_export.total_savings,
+            id: recommendations_export.total_savings, name: Total Savings}], showLabels: false,
+        showValues: true, unpinAxis: false, tickDensity: default, tickDensityCustom: 5,
+        type: linear}]
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: false
+    show_x_axis_ticks: true
+    y_axis_scale_mode: linear
+    x_axis_reversed: false
+    y_axis_reversed: false
+    plot_size_by_field: false
+    trellis: ''
+    stacking: ''
+    legend_position: center
+    series_types: {}
+    point_style: none
+    show_value_labels: false
+    label_density: 25
+    x_axis_scale: auto
+    y_axis_combined: true
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: "#808080"
+    defaults_version: 1
+    title_hidden: true
+    listen:
+      Project ID: recommendations_export.cloud_entity_id
+    row: 65
+    col: 0
+    width: 16
+    height: 8
+  - title: CloudSQL Recommendations
+    name: CloudSQL Recommendations (2)
+    model: gcp_billing_block
+    explore: recommendations_export
+    type: looker_column
+    fields: [recommendations_export.project_name, recommendations_export.recommender_subtype,
+      recommendations_export.total_savings]
+    pivots: [recommendations_export.recommender_subtype]
+    filters:
+      recommendations_export.service: CloudSql
+      recommendations_export.primary_impact__cost_projection__cost__units: NOT NULL
+    sorts: [recommendations_export.project_name, recommendations_export.recommender_subtype]
+    limit: 500
+    column_limit: 50
+    x_axis_gridlines: false
+    y_axis_gridlines: false
+    show_view_names: false
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: false
+    show_x_axis_ticks: true
+    y_axis_scale_mode: linear
+    x_axis_reversed: false
+    y_axis_reversed: false
+    plot_size_by_field: false
+    trellis: ''
+    stacking: normal
+    limit_displayed_rows: false
+    legend_position: center
+    point_style: none
+    show_value_labels: false
+    label_density: 25
+    x_axis_scale: auto
+    y_axis_combined: true
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: "#808080"
+    y_axes: [{label: '', orientation: left, series: [{axisId: recommendations_export.total_savings,
+            id: recommendations_export.total_savings, name: Total Savings}], showLabels: false,
+        showValues: true, unpinAxis: false, tickDensity: default, tickDensityCustom: 5,
+        type: linear}]
+    series_types: {}
+    show_row_numbers: true
+    transpose: false
+    truncate_text: true
+    hide_totals: false
+    hide_row_totals: false
+    size_to_fit: true
+    table_theme: white
+    enable_conditional_formatting: false
+    header_text_alignment: left
+    header_font_size: 12
+    rows_font_size: 12
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
+    defaults_version: 1
+    title_hidden: true
+    listen:
+      Project ID: recommendations_export.cloud_entity_id
+    row: 65
     col: 16
     width: 8
     height: 8

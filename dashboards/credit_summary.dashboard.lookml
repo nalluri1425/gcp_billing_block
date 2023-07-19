@@ -3,94 +3,201 @@
   layout: newspaper
   preferred_viewer: dashboards-next
   elements:
-  - title: YTD Sustained Use Discount
-    name: YTD Sustained Use Discount
+  - title: YTD Discount
+    name: YTD Discount
     model: gcp_billing_block
     explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: single_value
-    fields: [gcp_billing_export_v1_0100A3_749310_A12E96.period_selected, gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_sustained_use_discount]
+    fields: [gcp_billing_export_v1_0100A3_749310_A12E96.period_selected, gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_discount]
     filters:
       gcp_billing_export_v1_0100A3_749310_A12E96.period: Year
       gcp_billing_export_v1_0100A3_749310_A12E96.period_selected: "-NULL"
-    sorts: [gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_sustained_use_discount desc]
+    sorts: [gcp_billing_export_v1_0100A3_749310_A12E96.total_discount desc]
     limit: 500
     column_limit: 50
+    dynamic_fields: [{table_calculation: change, label: Change, expression: "(${gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_discount}-offset(${gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_discount},1))\n\
+          /if(${gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_discount}=0,null,${gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_discount})",
+        value_format: !!null '', value_format_name: percent_2, _kind_hint: measure,
+        _type_hint: number}]
     custom_color_enabled: true
     show_single_value_title: true
     show_comparison: true
-    comparison_type: value
-    comparison_reverse_colors: false
-    show_comparison_label: true
+    comparison_type: change
+    comparison_reverse_colors: true
+    show_comparison_label: false
     enable_conditional_formatting: false
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
-    comparison_label: Last Year to Date
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: false
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    y_axis_scale_mode: linear
+    x_axis_reversed: false
+    y_axis_reversed: false
+    plot_size_by_field: false
+    trellis: ''
+    stacking: ''
+    limit_displayed_rows: false
+    legend_position: center
+    point_style: none
+    show_value_labels: false
+    label_density: 25
+    x_axis_scale: auto
+    y_axis_combined: true
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: "#808080"
     defaults_version: 1
+    series_types: {}
+    show_null_points: true
+    interpolation: linear
     hidden_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.period_selected]
-    y_axes: []
-    listen: {}
-    row: 3
+    note_state: collapsed
+    note_display: hover
+    note_text: All discounts for this year up until today's date compared with last year's
+      discounts, from the beginning of last year until the same day last year
+    row: 2
     col: 0
     width: 8
-    height: 4
-  - title: YTD Committed Use Discount
-    name: YTD Committed Use Discount
+    height: 3
+  - title: YTD Free Tier
+    name: YTD Free Tier
     model: gcp_billing_block
     explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: single_value
-    fields: [gcp_billing_export_v1_0100A3_749310_A12E96.period_selected, gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_committed_use_discount]
+    fields: [gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_free_tier, gcp_billing_export_v1_0100A3_749310_A12E96.period_selected]
     filters:
       gcp_billing_export_v1_0100A3_749310_A12E96.period: Year
       gcp_billing_export_v1_0100A3_749310_A12E96.period_selected: "-NULL"
+    sorts: [gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_free_tier desc]
     limit: 500
     column_limit: 50
+    dynamic_fields: [{table_calculation: change, label: Change, expression: "(${gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_free_tier}-offset(${gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_free_tier},1))\n\
+          /if(${gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_free_tier}=0,null,${gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_free_tier})",
+        value_format: !!null '', value_format_name: percent_2, _kind_hint: measure,
+        _type_hint: number}]
     custom_color_enabled: true
     show_single_value_title: true
     show_comparison: true
-    comparison_type: value
-    comparison_reverse_colors: false
-    show_comparison_label: true
+    comparison_type: change
+    comparison_reverse_colors: true
+    show_comparison_label: false
     enable_conditional_formatting: false
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
-    comparison_label: Last Year to Date
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: false
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    y_axis_scale_mode: linear
+    x_axis_reversed: false
+    y_axis_reversed: false
+    plot_size_by_field: false
+    trellis: ''
+    stacking: ''
+    limit_displayed_rows: false
+    legend_position: center
+    point_style: none
+    show_value_labels: false
+    label_density: 25
+    x_axis_scale: auto
+    y_axis_combined: true
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: "#808080"
     defaults_version: 1
+    series_types: {}
+    show_null_points: true
+    interpolation: linear
     hidden_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.period_selected]
-    y_axes: []
-    listen: {}
-    row: 3
-    col: 8
+    note_state: collapsed
+    note_display: hover
+    note_text: All free tier credits for this year up until today's date compared with last year's
+      free tier credits, from the beginning of last year until the same day last year
+    row: 2
+    col: 0
     width: 8
-    height: 4
+    height: 3
   - title: YTD Promotion Credits
     name: YTD Promotion Credits
     model: gcp_billing_block
     explore: gcp_billing_export_v1_0100A3_749310_A12E96
     type: single_value
-    fields: [gcp_billing_export_v1_0100A3_749310_A12E96.period_selected, gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_promotional_credit]
+    fields: [gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_promotional_credit, gcp_billing_export_v1_0100A3_749310_A12E96.period_selected]
     filters:
       gcp_billing_export_v1_0100A3_749310_A12E96.period: Year
       gcp_billing_export_v1_0100A3_749310_A12E96.period_selected: "-NULL"
+    sorts: [gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_promotional_credit desc]
     limit: 500
     column_limit: 50
+    dynamic_fields: [{table_calculation: change, label: Change, expression: "(${gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_promotional_credit}-offset(${gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_promotional_credit},1))\n\
+          /if(${gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_promotional_credit}=0,null,${gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_promotional_credit})",
+        value_format: !!null '', value_format_name: percent_2, _kind_hint: measure,
+        _type_hint: number}]
     custom_color_enabled: true
     show_single_value_title: true
     show_comparison: true
-    comparison_type: value
-    comparison_reverse_colors: false
-    show_comparison_label: true
+    comparison_type: change
+    comparison_reverse_colors: true
+    show_comparison_label: false
     enable_conditional_formatting: false
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
-    comparison_label: Last Year to Date
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: false
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    y_axis_scale_mode: linear
+    x_axis_reversed: false
+    y_axis_reversed: false
+    plot_size_by_field: false
+    trellis: ''
+    stacking: ''
+    limit_displayed_rows: false
+    legend_position: center
+    point_style: none
+    show_value_labels: false
+    label_density: 25
+    x_axis_scale: auto
+    y_axis_combined: true
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: "#808080"
     defaults_version: 1
+    series_types: {}
+    show_null_points: true
+    interpolation: linear
     hidden_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.period_selected]
-    y_axes: []
-    listen: {}
-    row: 3
-    col: 16
+    note_state: collapsed
+    note_display: hover
+    note_text: All promotional credits for this year up until today's date compared with last year's
+      promotional credits, from the beginning of last year until the same day last year
+    row: 2
+    col: 0
     width: 8
-    height: 4
+    height: 3
   - title: Cost and Credit Breakdown
     name: Cost and Credit Breakdown
     model: gcp_billing_block

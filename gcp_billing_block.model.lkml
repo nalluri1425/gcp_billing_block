@@ -94,8 +94,15 @@ explore: recommendations_export {
     AND ${recommender} IN ('google.compute.commitment.UsageCommitmentRecommender',
       'google.compute.disk.IdleResourceRecommender',
       'google.compute.instance.IdleResourceRecommender',
-      'google.compute.instance.MachineTypeRecommender' )
-    AND ${primary_impact__cost_projection__cost__units} IS NOT NULL ;;
+      'google.compute.instance.MachineTypeRecommender',
+      'google.bigquery.table.PartitionClusterRecommender',
+      'google.bigquery.capacityCommitments.Recommender',
+      'google.cloudsql.instance.PerformanceRecommender',
+      'google.cloudsql.instance.OverprovisionedRecommender',
+      'google.cloudsql.instance.ReliabilityRecommender')
+      AND ${primary_impact__cost_projection__cost__units} IS NOT NULL
+      OR COALESCE(${primary_impact__cost_projection__cost__units}, 0) = 0
+     ;;
 
   # join: recommendations_export__target_resources {
   #   view_label: "Recommendations Export: Target Resources"

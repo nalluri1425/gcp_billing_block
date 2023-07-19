@@ -262,23 +262,47 @@ view: recommendations_export {
   }
 
   dimension: service {
-    sql: CASE WHEN REGEXP_CONTAINS(${recommender},r'google.compute.') THEN 'Compute Engine' ELSE '' END;;
-    drill_fields: [category]
+    sql: CASE
+          WHEN REGEXP_CONTAINS(${recommender}, r'google.compute.') THEN 'Compute Engine'
+          WHEN REGEXP_CONTAINS(${recommender}, r'google.bigquery.') THEN 'BigQuery'
+          WHEN REGEXP_CONTAINS(${recommender}, r'google.cloudsql.instance.') THEN 'CloudSql'
+          ELSE ''
+        END ;;
   }
 
   dimension: category {
     sql: CASE WHEN REGEXP_CONTAINS(${recommender},r'google.compute.disk.') THEN 'Persistent Disk' ELSE 'VM' END;;
   }
 
-  dimension: project_name {
-    sql: (select array_to_string(array_agg(REGEXP_EXTRACT(tr, r'.*googleapis.com/projects/(.*)/(?:regions|zones)/.*')),", ") from unnest(target_resources) as tr);;
+   dimension: project_name {
+    sql: CASE ${TABLE}.cloud_entity_id
+          WHEN '410698011330' THEN 'axiata-240519'
+          WHEN '64020156808' THEN 'orbitera-282006'
+          WHEN '711479309356' THEN 'techdata-290610'
+          WHEN '231638212182' THEN 'sharedinfra-274417'
+          WHEN '268123977873' THEN 'name-com-347617'
+          WHEN '513328770746' THEN 'eportal-274417'
+          WHEN '736182556645' THEN 'optus-307220'
+          WHEN '925624277438' THEN 'digital-space-379219'
+          WHEN '1039049190183' THEN 'dlt-298204'
+          WHEN '57860880876' THEN 'click-to-deploy-282707'
+          WHEN '130711031806' THEN 'APPGCPB2B'
+          WHEN '148352823289' THEN 'carahsoft-353012'
+          WHEN '242841824088' THEN 'masterconcept'
+          WHEN '310515528418' THEN 'orion-314005'
+          WHEN '410698011330' THEN 'axiata-240519'
+          WHEN '442737781193' THEN 'elliptical-flow-335310'
+          WHEN '1044757360832' THEN 'orbitera-bxd'
+          ELSE ''
+        END ;;
+    #sql: (select array_to_string(array_agg(REGEXP_EXTRACT(tr, r'.*googleapis.com/projects/(.*)/(?:regions|zones)/.*')),", ") from unnest(target_resources) as tr);;
     link: {
       label: "View Project Recommendations in Console"
-      url: "{% unless project_name._value contains ',' %}https://console.cloud.google.com/home/recommendations?project={{ cloud_entity_id._value }}{% endunless %}"
+      url: "{% unless project_name._value contains ',' %}https://console.cloud.google.com/home/recommendations?project={{ project_name }}{% endunless %}"
     }
     link: {
       label: "Project Cost Dashboard"
-      url: "{% unless project_name._value contains ',' %}/dashboards-next/gcp_billing_block::project_deep_dive?Project%20ID={{ cloud_entity_id._value }}{% endunless %}"
+      url: "{% unless project_name._value contains ',' %}/dashboards-next/gcp_billing_block::project_deep_dive?Project%20ID={{ project_name }}{% endunless %}"
     }
   }
 

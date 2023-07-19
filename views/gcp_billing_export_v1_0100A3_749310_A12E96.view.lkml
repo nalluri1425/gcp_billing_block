@@ -422,8 +422,8 @@ view: gcp_billing_export_v1_0100A3_749310_A12E96__credits {
 
   dimension: type {
     type: string
-    sql: case when ${name} like "%Committed Usage%" then "COMMITTED_USAGE_DISCOUNT"
-              when ${name} like "%Sustained Usage%" then "SUSTAINED_USAGE_DISCOUNT"
+    sql: case when ${name} like "%DISCOUNT%" then "DISCOUNT"
+              when ${name} like "%FREE_TIER%" then "FREE_TIER"
               else ${TABLE}.type end;;
     drill_fields: [name]
   }
@@ -437,24 +437,28 @@ view: gcp_billing_export_v1_0100A3_749310_A12E96__credits {
     drill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96__credits.type,gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_amount]
   }
 
-  measure: total_sustained_use_discount {
+  measure: total_discount {
     view_label: "Credits"
     type: sum
     value_format: "#,##0.00"
     html: <a href="#drillmenu" target="_self">{{ gcp_billing_export_v1_0100A3_749310_A12E96.currency_symbol._value }}{{ rendered_value }}</a>;;
     sql: -1*${amount} ;;
-    filters: [gcp_billing_export_v1_0100A3_749310_A12E96__credits.type: "SUSTAINED_USAGE_DISCOUNT"]
-    drill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96__credits.id,gcp_billing_export_v1_0100A3_749310_A12E96__credits.name,total_amount]
+    filters: [gcp_billing_export_v1_0100A3_749310_A12E96__credits.type: "DISCOUNT"]
+    drill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.project__name, gcp_billing_export_v1_0100A3_749310_A12E96.project.name, gcp_billing_export_v1_0100A3_749310_A12E96.service__description, gcp_billing_export_v1_0100A3_749310_A12E96__credits.name,
+    gcp_billing_export_v1_0100A3_749310_A12E96__credits.type,
+    gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_amount]
   }
 
-  measure: total_committed_use_discount {
+  measure: total_free_tier {
     view_label: "Credits"
     type: sum
     value_format: "#,##0.00"
     html: <a href="#drillmenu" target="_self">{{ gcp_billing_export_v1_0100A3_749310_A12E96.currency_symbol._value }}{{ rendered_value }}</a>;;
     sql: -1*${amount} ;;
-    filters: [gcp_billing_export_v1_0100A3_749310_A12E96__credits.type: "COMMITTED_USAGE_DISCOUNT, COMMITTED_USAGE_DISCOUNT_DOLLAR_BASE"]
-    drill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96__credits.id,gcp_billing_export_v1_0100A3_749310_A12E96__credits.name,total_amount]
+    filters: [gcp_billing_export_v1_0100A3_749310_A12E96__credits.type: "FREE_TIER"]
+    drill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.project__name, gcp_billing_export_v1_0100A3_749310_A12E96.project.name, gcp_billing_export_v1_0100A3_749310_A12E96.service__description, gcp_billing_export_v1_0100A3_749310_A12E96__credits.name,
+    gcp_billing_export_v1_0100A3_749310_A12E96__credits.type,
+    gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_amount]
   }
 
   measure: total_promotional_credit {
@@ -464,7 +468,9 @@ view: gcp_billing_export_v1_0100A3_749310_A12E96__credits {
     html: <a href="#drillmenu" target="_self">{{ gcp_billing_export_v1_0100A3_749310_A12E96.currency_symbol._value }}{{ rendered_value }}</a>;;
     sql: -1*${amount} ;;
     filters: [gcp_billing_export_v1_0100A3_749310_A12E96__credits.type: "PROMOTION"]
-    drill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96__credits.id,gcp_billing_export_v1_0100A3_749310_A12E96__credits.name,total_amount]
+    drill_fields: [gcp_billing_export_v1_0100A3_749310_A12E96.project__name, gcp_billing_export_v1_0100A3_749310_A12E96.service__description, gcp_billing_export_v1_0100A3_749310_A12E96__credits.name,
+    gcp_billing_export_v1_0100A3_749310_A12E96__credits.type,
+    gcp_billing_export_v1_0100A3_749310_A12E96__credits.total_amount]
   }
 }
 
