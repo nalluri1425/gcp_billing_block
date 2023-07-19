@@ -376,6 +376,15 @@
     col: 0
     width: 16
     height: 8
+  - name: 'space'
+    type: text
+    title_text: ''
+    subtitle_text: ''
+    body_text: "<p></p>\n"
+    row: 30
+    col: 0
+    width: 24
+    height: 2
   - title: PD Recommendations
     name: PD Recommendations (2)
     model: gcp_billing_block
@@ -510,6 +519,15 @@
     col: 0
     width: 16
     height: 8
+  - name: 'space1'
+    type: text
+    title_text: ''
+    subtitle_text: ''
+    body_text: "<p></p>\n"
+    row: 55
+    col: 0
+    width: 24
+    height: 2
   - title: BQ Recommendations
     name: BQ Recommendations (2)
     model: gcp_billing_block
