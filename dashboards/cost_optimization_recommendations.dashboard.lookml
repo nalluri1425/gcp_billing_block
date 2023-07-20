@@ -27,7 +27,7 @@
     series_types: {}
     defaults_version: 1
     listen:
-      Project ID: recommendations_export.cloud_entity_id
+      Project ID: recommendations_export.project_name
     row: 4
     col: 19
     width: 6
@@ -82,7 +82,7 @@
     series_types: {}
     defaults_version: 1
     listen:
-      Project ID: recommendations_export.cloud_entity_id
+      Project ID: recommendations_export.project_name
     row: 17
     col: 19
     width: 6
@@ -121,7 +121,7 @@
     series_types: {}
     defaults_version: 1
     listen:
-      Project ID: recommendations_export.cloud_entity_id
+      Project ID: recommendations_export.project_name
     row: 40
     col: 19
     width: 6
@@ -149,7 +149,7 @@
     series_types: {}
     defaults_version: 1
     listen:
-      Project ID: recommendations_export.cloud_entity_id
+      Project ID: recommendations_export.project_name
     row: 60
     col: 19
     width: 6
@@ -227,7 +227,7 @@
     defaults_version: 1
     title_hidden: true
     listen:
-      Project ID: recommendations_export.cloud_entity_id
+      Project ID: recommendations_export.project_name
     row: 7
     col: 0
     width: 16
@@ -304,7 +304,7 @@
     defaults_version: 1
     title_hidden: true
     listen:
-      Project ID: recommendations_export.cloud_entity_id
+      Project ID: recommendations_export.project_name
     row: 7
     col: 16
     width: 8
@@ -371,7 +371,7 @@
     defaults_version: 1
     title_hidden: true
     listen:
-      Project ID: recommendations_export.cloud_entity_id
+      Project ID: recommendations_export.project_name
     row: 20
     col: 0
     width: 16
@@ -448,7 +448,7 @@
     defaults_version: 1
     title_hidden: true
     listen:
-      Project ID: recommendations_export.cloud_entity_id
+      Project ID: recommendations_export.project_name
     row: 20
     col: 16
     width: 8
@@ -514,7 +514,7 @@
     defaults_version: 1
     title_hidden: true
     listen:
-      Project ID: recommendations_export.cloud_entity_id
+      Project ID: recommendations_export.project_name
     row: 45
     col: 0
     width: 16
@@ -590,7 +590,7 @@
     defaults_version: 1
     title_hidden: true
     listen:
-      Project ID: recommendations_export.cloud_entity_id
+      Project ID: recommendations_export.project_name
     row: 45
     col: 16
     width: 8
@@ -656,7 +656,7 @@
     defaults_version: 1
     title_hidden: true
     listen:
-      Project ID: recommendations_export.cloud_entity_id
+      Project ID: recommendations_export.project_name
     row: 65
     col: 0
     width: 16
@@ -723,7 +723,7 @@
     defaults_version: 1
     title_hidden: true
     listen:
-      Project ID: recommendations_export.cloud_entity_id
+      Project ID: recommendations_export.project_name
     row: 65
     col: 16
     width: 8
